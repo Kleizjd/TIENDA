@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function(){
 				swal("Por favor", "Escribe usuario y contraseñaa.", "error");
 				return false;
 			}else{
-				divLoading.style.display = "flex";
+				// divLoading.style.display = "flex";
 				var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 				var ajaxUrl = base_url+'/Login/loginUser'; 
 				var formData = new FormData(formLogin);
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					swal("Atención", "Las contraseñas no son iguales." , "error");
 					return false;
 				}
-				divLoading.style.display = "flex";
+				// divLoading.style.display = "flex";
 				var request = (window.XMLHttpRequest) ? 
 							new XMLHttpRequest() : 
 							new ActiveXObject('Microsoft.XMLHTTP');

@@ -11,7 +11,7 @@
   <body>
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo media(); ?>images/logo.png" alt="Logo" style="width: 70px;"></a>
+    <a class="navbar-brand" href="<?php echo base_url(); ?>"><img src="<?php echo media(); ?>/images/logo.png" alt="Logo" style="width: 70px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -37,21 +37,21 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="<?= media(); ?>images/slider1.png" class="d-block w-100" style="height: 450px;" alt="Slide">
+        <img src="<?= media(); ?>/images/slider1.png" class="d-block w-100" style="height: 450px;" alt="Slide">
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="<?= media(); ?>images/slider2.png" class="d-block w-100" style="height: 450px;" alt="Slide">
+        <img src="<?= media(); ?>/images/slider2.png" class="d-block w-100" style="height: 450px;" alt="Slide">
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="<?= media(); ?>images/slider3.png" class="d-block w-100" style="height: 450px;" alt="Slide">
+        <img src="<?= media(); ?>/images/slider3.png" class="d-block w-100" style="height: 450px;" alt="Slide">
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -71,7 +71,7 @@
   <div class="container">
     <div class="card-deck">
       <div class="card">
-        <img src="<?= media(); ?>images/card1.jpg" class="card-img-top" alt="...">
+        <img src="<?= media(); ?>/images/card1.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -79,7 +79,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="<?= media(); ?>images/card2.jpg" class="card-img-top" alt="...">
+        <img src="<?= media(); ?>/images/card2.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="<?= media(); ?>images/card3.jpg" class="card-img-top" alt="...">
+        <img src="<?= media(); ?>/images/card3.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>

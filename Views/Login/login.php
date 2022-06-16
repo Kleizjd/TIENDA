@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="José Daniel Grijalba">
-
+    
     <!-- <script src="<?= media() ?>/vendor/jquery/jquery.slim.min.js"></script> -->
     <link rel="stylesheet" href="<?= media() ?>/vendors/bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= media() ?>/vendors/fontawesome/css/all.min.css">
@@ -52,8 +52,8 @@
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">Recordarme</label>
-                                        <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock m-r-5"></i> olvidaste la contraseña?</a>
+                                        <label class="custom-control-label" for="customCheck1">&nbsp;&nbsp;&ntilde; Recordarme</label>
+                                        <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock m-r-5"></i> olvidaste la contrase&ntilde;a?</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                         <form class="form-horizontal" id="formResetPass" name="formResetPass" action="" method="POST" autocomplete="off">
                             <div class="form-group ">
                                 <div class="col-xs-12">
-                                    <h3>Recuperar Contraseña</h3>
+                                    <h3>Recuperar Contrase&ntilde;a</h3>
                                     <p class="text-muted">Ingresa tu correo y se te enviaran las instrucciones para restablacerla! </p>
                                 </div>
                             </div>
@@ -96,31 +96,31 @@
                                 <form id="create_account" style ="display:none">
                                     <h1>Create Account</h1>
                                     <div>
-                                        <input type="text" class="form-control" placeholder="Username" required="" />
+                                        <input type="text" class="form-control" placeholder="Usuario" required="" />
                                     </div>
                                     <div>
                                         <input type="email" class="form-control" placeholder="Email" required="" />
                                     </div>
                                     <div>
-                                        <input type="password" class="form-control" placeholder="Password" required="" />
+                                        <input type="password" class="form-control" placeholder="Contrase&ntilde;a" required="" />
                                     </div>
                                     <div>
-                                        <a class="btn btn-default submit" href="index.html">Submit</a>
+                                        <a class="btn btn-default submit" href="index.html">Enviar</a>
                                     </div>
 
                                     <div class="clearfix"></div>
 
                                     <div class="separator">
-                                        <p class="change_link">Already a member ?
-                                            <a href="#signin" class="to_register"> Log in </a>
+                                        <p class="change_link">Ya estas Registrado ?
+                                            <a href="#signin" class="to_register"> Ingresa </a>
                                         </p>
 
                                         <div class="clearfix"></div>
                                         <br />
 
                                         <div>
-                                            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                                            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                                            <span> &copy;Copyright <?= date("Y"); ?> Best -José Daniel Grijalba</span>
+
                                         </div>
                                     </div>
                                 </form>
@@ -137,21 +137,19 @@
     <!-- Essential javascripts for application to work-->
     <script src="<?= media() ?>/vendors/jquery/dist/jquery.min.js"></script>
 
-    <script src="<?= media(); ?>vendors/popper/popper.min.js"></script>
+    <script src="<?= media(); ?>/vendors/popper/popper.min.js"></script>
     <!-- <script src="<?= media(); ?>/js/bootstrap.min.js"></script> -->
     <script src="<?= media(); ?>/vendors/fontawesome/js/fontawesome.js"></script>
     <!-- <script src="<?= media(); ?>/js/main.js"></script> -->
     <!-- The javascript plugin to display page loading on top-->
-    <!-- <script src="<?= media(); ?>/js/plugins/pace.min.js"></script> -->
+    <script src="<?= media(); ?>/js/plugins/pace.min.js"></script>
     <script type="text/javascript" src="<?= media(); ?>/vendors/sweetalert/sweetalert.min.js"></script>
     <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
 </body>
 
 </html>
 <script>
-    $(function() {
-        $(".preloader").fadeOut();
-    });
+    $(function() {  $(".preloader").fadeOut(); });
     // ============================================================== 
     // Login and Recover Password 
     // ============================================================== 
@@ -168,7 +166,7 @@
         $("#create_account").show();
     });
     $('.to_register').on("click", function() {
-        $('.to_register'). hide();
+        $('#create_account'). hide();
         $("#formLogin").show();
     });
 

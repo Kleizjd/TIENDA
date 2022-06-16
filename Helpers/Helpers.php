@@ -13,7 +13,7 @@
     //Retorla la url de Assets
     function media()
     {
-        return BASE_URL."/Assets/";
+        return BASE_URL."/Assets";
     }
     function headerAdmin($data="")
     {
@@ -27,16 +27,12 @@
     }
     function headerTienda($data="")
     {
-        $view_header = "Views/Template/header_admin.php";
-
-        // $view_header = "Views/Template/header_tienda.php";
+        $view_header = "Views/Template/header_tienda.php";
         require_once ($view_header);
     }
     function footerTienda($data="")
     {
-        // $view_footer = "Views/Template/footer_tienda.php";
-        $view_footer = "Views/Template/footer_admin.php";
-
+        $view_footer = "Views/Template/footer_tienda.php";
         require_once ($view_footer);        
     }
 	//Muestra información formateada
@@ -63,8 +59,8 @@
     function sendEmail($data,$template)
     {
         if(ENVIRONMENT == 1){
-            $asunto = $data['asunto'];
-            $emailDestino = $data['email'];
+            // $asunto = $data['asunto'];
+            // $emailDestino = $data['email'];
             $empresa = NOMBRE_REMITENTE;
             $remitente = EMAIL_REMITENTE;
             $emailCopia = !empty($data['emailCopia']) ? $data['emailCopia'] : "";
@@ -72,7 +68,10 @@
             $de = "MIME-Version: 1.0\r\n";
             $de .= "Content-type: text/html; charset=UTF-8\r\n";
             $de .= "From: {$empresa} <{$remitente}>\r\n";
-            $de .= "Bcc: $emailCopia\r\n";
+            // $de .= "Bcc: $emailCopia\r\n";//correo empresarial
+            $de.= "=Reply-To: {$emailCopia}";//correo personal
+            $de.= "\r\n"."X-Mailer: PHP/" . phpversion();
+
             ob_start();
             require_once("Views/Template/Email/".$template.".php");
             $mensaje = ob_get_clean();
@@ -413,5 +412,3 @@
             return false;
         }
     }
-
- ?>
