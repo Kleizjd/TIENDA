@@ -59,14 +59,15 @@
     function sendEmail($data,$template)
     {
         if(ENVIRONMENT == 1){
-            // $asunto = $data['asunto'];
-            // $emailDestino = $data['email'];
+        
+            $emailDestino = $data['email'];
             $empresa = NOMBRE_REMITENTE;
             $remitente = EMAIL_REMITENTE;
-            $emailCopia = !empty($data['emailCopia']) ? $data['emailCopia'] : "";
+            $emailCopia = EMAIL_PEDIDOS;
+  
             //ENVIO DE CORREO
             $de = "MIME-Version: 1.0\r\n";
-            $de .= "Content-type: text/html; charset=UTF-8\r\n";
+            $de.= "Content-type:text/html;charset=UTF-8"."\r\n";
             $de .= "From: {$empresa} <{$remitente}>\r\n";
             // $de .= "Bcc: $emailCopia\r\n";//correo empresarial
             $de.= "=Reply-To: {$emailCopia}";//correo personal
@@ -75,6 +76,8 @@
             ob_start();
             require_once("Views/Template/Email/".$template.".php");
             $mensaje = ob_get_clean();
+            $asunto = "Recuperación de Contraseña";
+
             $send = mail($emailDestino, $asunto, $mensaje, $de);
             return $send;
         }else{

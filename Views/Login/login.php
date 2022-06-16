@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="José Daniel Grijalba">
-    
+
     <!-- <script src="<?= media() ?>/vendor/jquery/jquery.slim.min.js"></script> -->
     <link rel="stylesheet" href="<?= media() ?>/vendors/bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= media() ?>/vendors/fontawesome/css/all.min.css">
@@ -69,10 +69,11 @@
                                 </div>
                             </div>
                         </form>
+                        <!--  -->
                         <form class="form-horizontal" id="formResetPass" name="formResetPass" action="" method="POST" autocomplete="off">
                             <div class="form-group ">
                                 <div class="col-xs-12">
-                                    <h3>Recuperar Contrase&ntilde;a</h3>
+                                    <h3>¿Olvidaste contraseñ&ntilde;a?</h3>
                                     <p class="text-muted">Ingresa tu correo y se te enviaran las instrucciones para restablacerla! </p>
                                 </div>
                             </div>
@@ -89,11 +90,11 @@
                             <a class="d-block small mt-3" href="javascript:void(0)" id="to-return" class="text-info">
                                 <p class="text-center"><b>Iniciar sesion </b></p>
                             </a>
-
                         </form>
+                        <!--  -->
                         <div id="register_user" class="animate form registration_form">
                             <section class="login_content">
-                                <form id="create_account" style ="display:none">
+                                <form id="create_account" style="display:none">
                                     <h1>Create Account</h1>
                                     <div>
                                         <input type="text" class="form-control" placeholder="Usuario" required="" />
@@ -149,7 +150,9 @@
 
 </html>
 <script>
-    $(function() {  $(".preloader").fadeOut(); });
+    $(function() {
+        $(".preloader").fadeOut();
+    });
     // ============================================================== 
     // Login and Recover Password 
     // ============================================================== 
@@ -162,11 +165,11 @@
         $("#formLogin").fadeIn();
     });
     $('#to-register').on("click", function() {
-        $('#formLogin'). hide();
+        $('#formLogin').hide();
         $("#create_account").show();
     });
     $('.to_register').on("click", function() {
-        $('#create_account'). hide();
+        $('#create_account').hide();
         $("#formLogin").show();
     });
 

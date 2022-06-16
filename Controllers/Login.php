@@ -53,8 +53,9 @@
 
 		public function resetPass(){
 			if($_POST){
+				
 				error_reporting(0);
-
+				echo $_POST;
 				if(empty($_POST['txtEmailReset'])){
 					$arrResponse = array('status' => false, 'msg' => 'Error de datos' );
 				}else{

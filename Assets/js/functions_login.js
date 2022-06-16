@@ -1,7 +1,7 @@
-// $('.login-content [data-toggle="flip"]').click(function() {
-// 	$('.login-box').toggleClass('flipped');
-// 	return false;
-// });
+$('.login-content [data-toggle="flip"]').click(function() {
+	$('.login-box').toggleClass('flipped');
+	return false;
+});
 
 var divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
@@ -46,10 +46,11 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	}
 
-	if(document.querySelector("#formRecetPass")){		
-		let formRecetPass = document.querySelector("#formRecetPass");
-		formRecetPass.onsubmit = function(e) {
+	if(document.querySelector("#formResetPass")){		
+		let formResetPass = document.querySelector("#formResetPass");
+		formResetPass.onsubmit = function(e) {
 			e.preventDefault();
+
 
 			let strEmail = document.querySelector('#txtEmailReset').value;
 			if(strEmail == "")
@@ -57,20 +58,21 @@ document.addEventListener('DOMContentLoaded', function(){
 				swal("Por favor", "Escribe tu correo electrónico.", "error");
 				return false;
 			}else{
-				divLoading.style.display = "flex";
-				var request = (window.XMLHttpRequest) ? 
-								new XMLHttpRequest() : 
-								new ActiveXObject('Microsoft.XMLHTTP');
-								
+			// 	// divLoading.style.display = "flex";
+				var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+								//
 				var ajaxUrl = base_url+'/Login/resetPass'; 
-				var formData = new FormData(formRecetPass);
+				var formData = new FormData(formResetPass);
 				request.open("POST",ajaxUrl,true);
 				request.send(formData);
-				request.onreadystatechange = function(){
+				request.onreadystatechange = function(){ 
+					console.log(request.status)
 					if(request.readyState != 4) return;
 
 					if(request.status == 200){
-						var objData = JSON.parse(request.responseText);
+						// alert(request.responseText);//error
+						var objData = JSON.parse(request.responseText);//error
+						
 						if(objData.status)
 						{
 							swal({
@@ -87,11 +89,11 @@ document.addEventListener('DOMContentLoaded', function(){
 						}else{
 							swal("Atención", objData.msg, "error");
 						}
-					}else{
-						swal("Atención","Error en el proceso", "error");
+			// 		// }else{
+			// 		// 	swal("Atención","Error en el proceso", "error");
 					}
-					divLoading.style.display = "none";
-					return false;
+			// 		// divLoading.style.display = "none";
+					// return false;
 				}	
 			}
 		}
