@@ -14,7 +14,7 @@ getModal('modalRoles', $data);
       </div>
 
       <div class="title_right">
-        <div class="col-md-5 col-sm-5  form-group pull-right top_search">
+        <div class="col-md-6 col-sm-6  form-group pull-right top_search">
           <div class="input-group center">
             <ul class="app-breadcrumb breadcrumb">
               <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>

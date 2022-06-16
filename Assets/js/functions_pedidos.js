@@ -154,7 +154,7 @@ function fntEditInfo(element,idpedido){
             {
                 document.querySelector("#divModal").innerHTML = objData.html;
                 $('#modalFormPedido').modal('show');
-                $('select').selectpicker();
+                // $('select').selectpicker();
                 fntUpdateInfo();
             }else{
                 swal("Error", objData.msg , "error");

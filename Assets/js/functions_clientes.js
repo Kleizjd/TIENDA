@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     return false;
                 } 
             } 
-            divLoading.style.display = "flex";
+            // divLoading.style.display = "flex";
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             let ajaxUrl = base_url+'/Clientes/setCliente'; 
             let formData = new FormData(formCliente);

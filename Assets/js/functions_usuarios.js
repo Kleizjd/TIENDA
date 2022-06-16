@@ -1,14 +1,18 @@
 let tableUsuarios;
 let rowTable = ""; 
-let divLoading = document.querySelector("#divLoading");
+// let divLoading = document.querySelector("#divLoading");
+
 document.addEventListener('DOMContentLoaded', function(){
 
     tableUsuarios = $('#tableUsuarios').dataTable( {
+        "autoWidth": false,
+        
         "aProcessing":true,
         "aServerSide":true,
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
+        
         "ajax":{
             "url": " "+base_url+"/Usuarios/getUsuarios",
             "dataSrc":""
@@ -21,7 +25,9 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"telefono"},
             {"data":"nombrerol"},
             {"data":"status"},
-            {"data":"options"}
+            {"data":"options"},
+            // { "width": "20%" },
+
         ],
         'dom': 'lBfrtip',
         'buttons': [
@@ -52,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function(){
         "iDisplayLength": 10,
         "order":[[0,"desc"]]  
     });
-
+    
     if(document.querySelector("#formUsuario")){
         let formUsuario = document.querySelector("#formUsuario");
         formUsuario.onsubmit = function(e) {
@@ -79,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     return false;
                 } 
             } 
-            divLoading.style.display = "flex";
+            // divLoading.style.display = "flex";
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             let ajaxUrl = base_url+'/Usuarios/setUsuario'; 
             let formData = new FormData(formUsuario);
@@ -153,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     return false;
                 } 
             } 
-            divLoading.style.display = "flex";
+            // divLoading.style.display = "flex";
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             let ajaxUrl = base_url+'/Usuarios/putPerfil'; 
             let formData = new FormData(formPerfil);
@@ -200,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 swal("Atención", "Todos los campos son obligatorios." , "error");
                 return false;
             }
-            divLoading.style.display = "flex";
+            //  divLoading.style.display = "flex";
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             let ajaxUrl = base_url+'/Usuarios/putDFical'; 
             let formData = new FormData(formDataFiscal);
@@ -249,7 +255,7 @@ function fntRolesUsuario(){
         request.onreadystatechange = function(){
             if(request.readyState == 4 && request.status == 200){
                 document.querySelector('#listRolid').innerHTML = request.responseText;
-                $('#listRolid').selectpicker('render');
+                // $('#listRolid').selectpicker('render');
             }
         }
     }
@@ -310,7 +316,7 @@ function fntEditUsuario(element,idpersona){
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector("#txtEmail").value = objData.data.email_user;
                 document.querySelector("#listRolid").value =objData.data.idrol;
-                $('#listRolid').selectpicker('render');
+                // $('#listRolid').selectpicker('render');
 
                 if(objData.data.status == 1){
                     document.querySelector("#listStatus").value = 1;

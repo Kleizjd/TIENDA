@@ -324,8 +324,8 @@ function fntEditInfo(element,idProducto){
                 document.querySelector("#listCategoria").value = objProducto.categoriaid;
                 document.querySelector("#listStatus").value = objProducto.status;
                 tinymce.activeEditor.setContent(objProducto.descripcion); 
-                $('#listCategoria').selectpicker('render');
-                $('#listStatus').selectpicker('render');
+                // $('#listCategoria').selectpicker('render');
+                // $('#listStatus').selectpicker('render');
                 fntBarcode();
 
                 if(objProducto.images.length > 0){
@@ -402,7 +402,7 @@ function fntCategorias(){
         request.onreadystatechange = function(){
             if(request.readyState == 4 && request.status == 200){
                 document.querySelector('#listCategoria').innerHTML = request.responseText;
-                $('#listCategoria').selectpicker('render');
+                // $('#listCategoria').selectpicker('render');
             }
         }
     }

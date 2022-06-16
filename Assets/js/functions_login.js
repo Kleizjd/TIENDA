@@ -1,7 +1,7 @@
-$('.login-content [data-toggle="flip"]').click(function() {
-	$('.login-box').toggleClass('flipped');
-	return false;
-});
+// $('.login-content [data-toggle="flip"]').click(function() {
+// 	$('.login-box').toggleClass('flipped');
+// 	return false;
+// });
 
 var divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
