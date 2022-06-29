@@ -35,7 +35,7 @@
   <link href="<?= media() ?>/build/css/custom.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <link href="<?= media() ?>/template/dist/css/style.css" rel="stylesheet">
-  <style>.top_nav{ width:100%; position:fixed;} .navbar{ position:fixed;}</style>
+  <style>.top_nav{ width:100%; position:fixed; z-index:3;} .navbar{ position:fixed;}</style>
 </head>
 
 <body class="nav-md">
