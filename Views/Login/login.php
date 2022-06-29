@@ -23,7 +23,15 @@
 </head>
 
 <body>
-
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">No al maltrato</p>
+        </div>
+    </div>
     <section id="wrapper">
 
         <div class="login-register" style="background-image:url(assets/images/background/fondo-login-1024x427.jpg);">
@@ -174,6 +182,7 @@
     });
 
     $(document).ready(function() {
+        $("#formResetPass").slideUp();
         $(document).on("click", ".showPassword", function() {
             let inputPassword = $(this).parent().find("input");
             if ($(inputPassword).val() != "") {

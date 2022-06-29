@@ -30,3 +30,8 @@
 	require_once("Libraries/Core/Load.php");//
 
  ?>
+ <script>
+    $(function() {
+        $(".preloader").fadeOut();
+    });
+ </script>

@@ -1,16 +1,16 @@
- <!-- footer content -->
- <footer>
+<footer>
    <div class="pull-right">
      <!-- Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a> -->
      <span> &copy;Copyright <?= date("Y"); ?> Best -José Daniel Grijalba</span>
    </div>
-   <div class="clearfix"></div>
  </footer>
- <!-- /footer content -->
  </div>
  </div>
  <script>
         const base_url = "<?= base_url(); ?>";
+    //     $(function() {
+    //     $(".preloader").fadeOut();
+    // });
     </script>
  <script src="<?= media() ?>/js/fontawesome.js"></script>
 
@@ -22,10 +22,10 @@
     <!-- <script type="text/javascript" src="<?= media(); ?>/js/plugins/jquery.dataTables.min.js"></script> -->
 
  <!-- ] -->
- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+ <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
- <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+ <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script> -->
  <!--  -->
  <!-- <script src="<?= media() ?>/vendors/sweetalert.min.js"></script> -->
  <!-- Bootstrap -->
@@ -63,11 +63,11 @@
  <!-- bootstrap-daterangepicker -->
  <script src="<?= media() ?>/vendors/moment/min/moment.min.js"></script>
  <script src="<?= media() ?>/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-   <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+   <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script> -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -75,8 +75,17 @@
     <script type="text/javascript" src="<?= media();?>/js/functions_admin.js"></script> 
     <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
  <!-- Custom Theme Scripts -->
- <script src="<?= media() ?>/build/js/custom.min.js"></script>
+ <!-- <script src="<?= media() ?>/build/js/custom.min.js"></script> -->
+<script>
+  $(function() {
+        // ============================================================== 
+    // Perfact scrollbar
+    // ============================================================== 
+    // $('.scroll-sidebar, .right-side-panel, .message-center, .right-sidebar').perfectScrollbar();
+    // $('.scroll-sidebar').perfectScrollbar();
 
+  });
+</script>
  </body>
 
  </html>

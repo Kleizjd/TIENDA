@@ -1,5 +1,5 @@
         
-      <?php headerTienda($data);?>  
+      <?php headerAdmin($data);?>  
         <!-- page content -->
         
         <div class="right_col" role="main">
@@ -42,9 +42,9 @@
 
 
         </div>
+        
         <!-- /page content -->
-        <!-- <?php //footerAdmin($data); ?> -->
-        <?php footerTienda($data); ?>
+        <?php footerAdmin($data); ?>
         
 
        

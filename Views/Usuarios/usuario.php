@@ -1,7 +1,4 @@
-<?php 
-    headerAdmin($data); 
-    getModal('modalUsuarios',$data);
-?>
+<?php headerAdmin($data); getModal('modalUsuarios',$data); ?>
   <main class="app-content">    
       <div class="app-title">
         <div>

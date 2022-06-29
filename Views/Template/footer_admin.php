@@ -9,9 +9,11 @@
  <!-- /footer content -->
  </div>
  </div>
+ 
  <script>
    const base_url = "<?= base_url(); ?>";
    const smony = "<?= SMONEY; ?>";
+
  </script>
  <script src="<?= media() ?>/js/fontawesome.js"></script>
  <script type="text/javascript" src="<?= media(); ?>/js/functions_admin.js"></script>
@@ -23,9 +25,10 @@
  <script src="<?= media() ?>/js/plugins/jquery.dataTables.min.js"></script>
  <script src="<?= media() ?>/js/plugins/dataTables.bootstrap.min.js"></script>
  <!-- <script src="<?= media() ?>/js/plugins/bootstrap-select.min.js"></script> -->
-
+    <!--Menu sidebar -->
+    <script src="<?= media() ?>/template/dist/js/sidebarmenu.js"></script>
  <!-- ] -->
- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+ <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script> -->
  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
@@ -65,9 +68,27 @@
  <!-- bootstrap-daterangepicker -->
  <script src="<?= media() ?>/vendors/moment/min/moment.min.js"></script>
  <script src="<?= media() ?>/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="<?= media() ?>/template/dist/js/perfect-scrollbar.jquery.min.js"></script>
  <!-- Custom Theme Scripts -->
+ <!-- <script src="dist/js/sidebarmenu.js"></script> -->
+
  <script src="<?= media() ?>/build/js/custom.min.js"></script>
+ <script>
+        $(function() {
+        $(".preloader").fadeOut();
+    });
+  // $(function() {
+  //       // ============================================================== 
+  //   // Perfact scrollbar
+  //   // ============================================================== 
+  //   // $('.scroll-sidebar, .right-side-panel, .message-center, .right-sidebar').perfectScrollbar();
+  //   $('.scroll-sidebar').perfectScrollbar();
+    
+
+  // });
+
+ </script>
 
  </body>
 

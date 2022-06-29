@@ -1,5 +1,4 @@
-       <?php headerTienda($data);
-		getModal('modalUsuarios', $data); ?>
+       <?php headerAdmin($data); getModal('modalUsuarios', $data); ?>
        <!-- page content -->
        <div id="contentAjax"></div>
        <div class="right_col" role="main">
@@ -28,9 +27,9 @@
        					<div class="x_panel">
        						<div class="x_title">
        							<!-- <h2>Form Design <small>different form elements</small></h2> -->
-       							<!-- <?php if ($_SESSION['permisosMod']['w']) { ?> -->
+       							<?php if ($_SESSION['permisosMod']['w']) { ?>
        							<button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
-       							<!-- <?php } ?> -->
+       							<?php } ?>
        							<!-- <ul class="nav navbar-right panel_toolbox">
        								<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
        								</li>
@@ -102,4 +101,4 @@
        <!-- /page content -->
 
        <!-- footer content -->
-       <?php footerTienda($data); ?>
+       <?php footerAdmin($data); ?>
