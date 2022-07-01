@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"nombrerol"},
             {"data":"status"},
             {"data":"options"},
-            // { "width": "20%" },
 
         ],
         'dom': 'Bfrtip',
@@ -117,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         swal("Error", objData.msg , "error");
                     }
                 }
-                divLoading.style.display = "none";
+                // divLoading.style.display = "none";
                 return false;
             }
         }
@@ -323,7 +322,7 @@ function fntEditUsuario(element,idpersona){
                 }else{
                     document.querySelector("#listStatus").value = 2;
                 }
-                $('#listStatus').selectpicker('render');
+                // $('#listStatus').selectpicker('render');
             }
         }
     
@@ -385,3 +384,10 @@ function openModal()
 function openModalPerfil(){
     $('#modalFormPerfil').modal('show');
 }
+// $(document).ready(function () {  
+//   $("#modalFormUsuario").on("hidden.bs.modal", function (e) {
+//     jQuery(this).removeData("bs.modal");
+//     jQuery(this).find(".modal-content").empty();
+//     // $(".modal-body1").html("Where did he go?!?!?!");
+//   });
+// });

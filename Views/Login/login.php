@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="José Daniel Grijalba">
 
-    <!-- <script src="<?= media() ?>/vendor/jquery/jquery.slim.min.js"></script> -->
     <link rel="stylesheet" href="<?= media() ?>/vendors/bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= media() ?>/vendors/fontawesome/css/all.min.css">
 
@@ -14,14 +12,11 @@
     <!-- Custom CSS -->
     <link href="<?= media() ?>/template/my-css-js/css/style.min.css" rel="stylesheet">
     <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
+    <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
     <!-- <link href="<?= media() ?>/build/css/custom.min.css" rel="stylesheet"> -->
-
     <link rel="stylesheet" type="text/css" href="<?= media(); ?>/template/dist/css/style.css">
     <title><?php $data['page_tag']; ?></title>
-
 </head>
-
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -29,19 +24,16 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">No al maltrato</p>
+            <p class="loader__label">Tienda Virtual</p>
         </div>
     </div>
     <section id="wrapper">
-
-        <div class="login-register" style="background-image:url(assets/images/background/fondo-login-1024x427.jpg);">
+        <div class="login-register" style="background-image:url(<?= media() ?>/images/background/fondo-login-1024x427.jpg);">
             <div class="login-box card login-box">
                 <div class="card-header">
                     <div class="justify-content-center row">
                         <div class="col-10">
-                            <!-- <h1> Ingreso</h1> -->
                             <h1><?= $data['page_title']; ?></h1>
-
                         </div>
                     </div>
                     <div class="card-body">
@@ -60,7 +52,7 @@
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">&nbsp;&nbsp;&ntilde; Recordarme</label>
+                                        <label class="custom-control-label" for="customCheck1">&nbsp;&nbsp;& Recordarme</label>
                                         <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock m-r-5"></i> olvidaste la contrase&ntilde;a?</a>
                                     </div>
                                 </div>
@@ -123,13 +115,11 @@
                                         <p class="change_link">Ya estas Registrado ?
                                             <a href="#signin" class="to_register"> Ingresa </a>
                                         </p>
-
                                         <div class="clearfix"></div>
                                         <br />
 
                                         <div>
                                             <span> &copy;Copyright <?= date("Y"); ?> Best -José Daniel Grijalba</span>
-
                                         </div>
                                     </div>
                                 </form>
@@ -145,7 +135,6 @@
     </script>
     <!-- Essential javascripts for application to work-->
     <script src="<?= media() ?>/vendors/jquery/dist/jquery.min.js"></script>
-
     <script src="<?= media(); ?>/vendors/popper/popper.min.js"></script>
     <!-- <script src="<?= media(); ?>/js/bootstrap.min.js"></script> -->
     <script src="<?= media(); ?>/vendors/fontawesome/js/fontawesome.js"></script>
@@ -155,7 +144,6 @@
     <script type="text/javascript" src="<?= media(); ?>/vendors/sweetalert/sweetalert.min.js"></script>
     <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
 </body>
-
 </html>
 <script>
     $(function() {

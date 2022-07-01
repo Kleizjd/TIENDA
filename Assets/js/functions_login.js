@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}else{
 						swal("Atención","Error en el proceso", "error");
 					}
-					divLoading.style.display = "none";
+					// divLoading.style.display = "none";
 					return false;
 				}
 			}
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}else{
 						swal("Atención","Error en el proceso", "error");
 					}
-					divLoading.style.display = "none";
+					// divLoading.style.display = "none";
 					return false;
 				}	
 			}
@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					}else{
 						swal("Atención","Error en el proceso", "error");
 					}
-					divLoading.style.display = "none";
+					// divLoading.style.display = "none";
 				}
 			}
 		}

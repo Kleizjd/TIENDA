@@ -9,8 +9,9 @@
   <link rel="icon" href="<?= media() ?>/images/favicon.ico" type="image/ico" />
 
   <title><?= $data['page_tag'] ?></title>
-  <!-- <link href="<?= media() ?>/template/my-css-js/css/loading.css" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" type="text/css" href="<?= media() ?>/css/bootstrap-select.min.css">  -->
+  <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
+  <!-- <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css"> -->
   <!-- Bootstrap -->
   <link href="<?= media() ?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -27,10 +28,8 @@
   <link href="<?= media() ?>/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
   <!-- bootstrap-daterangepicker -->
   <link href="<?= media() ?>/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css"> -->
-  <style>
+  <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/main.css">
 
-  </style>
   <!-- Custom Theme Style -->
   <link href="<?= media() ?>/build/css/custom.min.css" rel="stylesheet">
   <!-- Custom CSS -->

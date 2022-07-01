@@ -44,6 +44,7 @@ function fntValidText(){
 				this.classList.add('is-invalid');
 			}else{
 				this.classList.remove('is-invalid');
+				this.classList.add('is-valid');
 			}				
 		});
 	});
