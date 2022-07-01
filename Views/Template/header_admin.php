@@ -9,7 +9,7 @@
   <link rel="icon" href="<?= media() ?>/images/favicon.ico" type="image/ico" />
 
   <title><?= $data['page_tag'] ?></title>
-  <link href="<?= media() ?>/template/my-css-js/css/loading.css" rel="stylesheet">
+  <!-- <link href="<?= media() ?>/template/my-css-js/css/loading.css" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" type="text/css" href="<?= media() ?>/css/bootstrap-select.min.css">  -->
   <!-- Bootstrap -->
   <link href="<?= media() ?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
