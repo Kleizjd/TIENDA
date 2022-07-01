@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
             // { "width": "20%" },
 
         ],
-        'dom': 'lBfrtip',
+        'dom': 'Bfrtip',
         'buttons': [
             {
                 "extend": "copyHtml5",

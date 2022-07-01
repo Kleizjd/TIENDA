@@ -1,7 +1,6 @@
  <!-- footer content -->
  <footer>
    <div class="pull-right">
-     <!-- Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a> -->
      <span> &copy;Copyright <?= date("Y"); ?> Best -José Daniel Grijalba</span>
    </div>
    <div class="clearfix"></div>
@@ -9,31 +8,35 @@
  <!-- /footer content -->
  </div>
  </div>
- 
+
  <script>
    const base_url = "<?= base_url(); ?>";
    const smony = "<?= SMONEY; ?>";
-
  </script>
- <script src="<?= media() ?>/js/fontawesome.js"></script>
  <script type="text/javascript" src="<?= media(); ?>/js/functions_admin.js"></script>
  <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
- <script src="<?= media() ?>/vendors/sweetalert/sweetalert.min.js"></script>
 
  <!-- jQuery -->
- <script src="<?= media() ?>/vendors/jquery/dist/jquery.min.js"></script>
+ <script src="<?= media(); ?>/js/popper.min.js"></script>
+ <script src="<?= media() ?>/vendors/jquery/dist/jquery-3.3.1.min.js"></script>
  <script src="<?= media() ?>/js/plugins/jquery.dataTables.min.js"></script>
  <script src="<?= media() ?>/js/plugins/dataTables.bootstrap.min.js"></script>
- <script src="<?= media() ?>/js/plugins/bootstrap-select.min.js"></script>
-    <!--Menu sidebar -->
-    <script src="<?= media() ?>/template/dist/js/sidebarmenu.js"></script>
- <!-- ] -->
- <!-- <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script> -->
- <!-- <script src="<?= media() ?>/js/plugins//js/buttons.bootstrap4.js"></script> -->
+ <script src="<?= media() ?>/js/fontawesome.js"></script>
+ <!-- Page specific javascripts-->
+ <script type="text/javascript" src="<?= media(); ?>/js/plugins/sweetalert.min.js"></script>
+ <script type="text/javascript" src="<?= media(); ?>/js/tinymce/tinymce.min.js"></script>
+ <!-- Data table plugin-->
+ <script type="text/javascript" src="<?= media(); ?>/js/plugins/jquery.dataTables.min.js"></script>
+ <script type="text/javascript" src="<?= media(); ?>/js/plugins/dataTables.bootstrap.min.js"></script>
+ <!-- <script type="text/javascript" src="<?= media(); ?>/js/plugins/bootstrap-select.min.js"></script> -->
+ 
+ <script src="<?= media() ?>/vendors/bootstrap/dist/js/buttons.bootstrap4.js"></script>
 
  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
  <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+ <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+
  <!--  -->
  <!-- Bootstrap -->
  <script src="<?= media() ?>/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -70,26 +73,24 @@
  <!-- bootstrap-daterangepicker -->
  <script src="<?= media() ?>/vendors/moment/min/moment.min.js"></script>
  <script src="<?= media() ?>/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- slimscrollbar scrollbar JavaScript -->
-<script src="<?= media() ?>/template/dist/js/perfect-scrollbar.jquery.min.js"></script>
+ <!-- slimscrollbar scrollbar JavaScript -->
+ <script src="<?= media() ?>/template/dist/js/perfect-scrollbar.jquery.min.js"></script>
  <!-- Custom Theme Scripts -->
- <!-- <script src="dist/js/sidebarmenu.js"></script> -->
 
  <script src="<?= media() ?>/build/js/custom.min.js"></script>
  <script>
-        $(function() {
-        $(".preloader").fadeOut();
-    });
-  // $(function() {
-  //       // ============================================================== 
-  //   // Perfact scrollbar
-  //   // ============================================================== 
-  //   // $('.scroll-sidebar, .right-side-panel, .message-center, .right-sidebar').perfectScrollbar();
-  //   $('.scroll-sidebar').perfectScrollbar();
-    
+   $(function() {
+     $(".preloader").fadeOut();
+   });
+   $(function() {
+     // ============================================================== 
+     // Perfact scrollbar
+     // ============================================================== 
+     // $('.scroll-sidebar, .right-side-panel, .message-center, .right-sidebar').perfectScrollbar();
+     $('.scroll-sidebar').perfectScrollbar();
 
-  // });
 
+   });
  </script>
 
  </body>

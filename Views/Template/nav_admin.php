@@ -8,7 +8,9 @@
             <ul class=" navbar-right">
               <li class="nav-item dropdown open" style="padding-left: 15px;">
                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                  <img src="<?= media() ?>/images/avatar.png" alt="">John Doe
+                  <img src="<?= media() ?>/images/avatar.png" alt="">
+                  <span><?= $_SESSION['userData']['nombres']; ?></span>
+
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="<?= base_url() ?>/perfil"> Perfil</a>
@@ -16,9 +18,9 @@
                     <span class="badge bg-red pull-right">50%</span>
                     <span>Opciones</span>
                   </a>
-                  <a class="dropdown-item" href="javascript:;">Help</a>
+                  <a class="dropdown-item" href="javascript:;">Ayuda</a>
                   <a class="dropdown-item" href="<?= base_url() ?>/logout">
-                    <i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                    <i class="fa fa-sign-out pull-right"></i> Salir</a>
                 </div>
               </li>
 
@@ -93,7 +95,7 @@
       <!-- /top navigation -->
       <!-- left Column -->
       <div class="col-md-3 left_col">
-        <div class="left_col scroll-view">
+        <div class="left_col">
           <div class="navbar nav_title" style="border: 0;">
 
             <a href="./" class="site_title"><img src="<?= media() ?>/images/favicon/logo.png" class="img-responsive"></i>
@@ -194,7 +196,7 @@
 
           <!-- /menu footer buttons -->
           <div class="sidebar-footer hidden-small">
-            <a data-toggle="tooltip" data-placement="top" title="Settings">
+            <a data-toggle="tooltip" data-placement="top" title="Herramientas">
               <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
             </a>
             <!-- <a data-toggle="tooltip" data-placement="top" title="FullScreen">
@@ -210,7 +212,7 @@
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a> -->
 
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?= base_url() ?>/logout">
+            <a data-toggle="tooltip" data-placement="top" title="Salir" href="<?= base_url() ?>/logout">
               <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
           </div>

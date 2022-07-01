@@ -10,7 +10,7 @@
 
   <title><?= $data['page_tag'] ?></title>
   <link href="<?= media() ?>/template/my-css-js/css/loading.css" rel="stylesheet">
-
+  <!-- <link rel="stylesheet" type="text/css" href="<?= media() ?>/css/bootstrap-select.min.css">  -->
   <!-- Bootstrap -->
   <link href="<?= media() ?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -36,7 +36,7 @@
   <!-- Custom CSS -->
   <link href="<?= media() ?>/template/dist/css/style.css" rel="stylesheet">
   <style>
-    .top_nav{  display: flex; position: fixed; top: 0; left: 0; right: 0; z-index:3; } .navbar{ position:fixed;}
+    .top_nav{  display: flex; position: fixed; top: 0; left: 0; right: 0; z-index:2; } .navbar{ position:fixed; z-index:2;}
   </style>
 </head>
 
