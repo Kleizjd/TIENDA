@@ -15,7 +15,7 @@
 				$arrPermisosRol = $this->model->selectPermisosRol($rolid);
 				$arrRol = $this->model->getRol($rolid);
 				$arrPermisos = array('r' => 0, 'w' => 0, 'u' => 0, 'd' => 0);
-				$arrPermisoRol = array('idrol' => $rolid, 'rol' => $arrRol['nombrerol']);
+				$arrPermisoRol = array('idrol' => $rolid, 'rol' => $arrRol['nombrerol']);//duda
 
 				if(empty($arrPermisosRol))
 				{

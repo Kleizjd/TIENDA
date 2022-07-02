@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="<?= media() ?>/vendors/bootstrap-4.4.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= media() ?>/vendors/fontawesome/css/all.min.css">
 
-    <link href="<?= media() ?>/template/my-css-js/css/login-register-lock.css" rel="stylesheet">
+    <link href="<?= media() ?>/css/login-register-lock.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= media() ?>/template/my-css-js/css/style.min.css" rel="stylesheet">
     <!-- Main CSS-->
@@ -52,7 +52,7 @@
                                 <div class="col-md-12">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                        <label class="custom-control-label" for="customCheck1">&nbsp;&nbsp;& Recordarme</label>
+                                        <label class="custom-control-label" for="customCheck1"><b>Recordarme</b></label>
                                         <a href="javascript:void(0)" id="to-recover" class="text-dark float-right"><i class="fa fa-lock m-r-5"></i> olvidaste la contrase&ntilde;a?</a>
                                     </div>
                                 </div>

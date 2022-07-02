@@ -19,8 +19,6 @@
  <!-- jQuery -->
  <script src="<?= media(); ?>/js/popper.min.js"></script>
  <script src="<?= media() ?>/vendors/jquery/dist/jquery-3.3.1.min.js"></script>
- <script src="<?= media() ?>/js/plugins/jquery.dataTables.min.js"></script>
- <script src="<?= media() ?>/js/plugins/dataTables.bootstrap.min.js"></script>
  <script src="<?= media() ?>/js/fontawesome.js"></script>
  <!-- Page specific javascripts-->
  <script type="text/javascript" src="<?= media(); ?>/js/plugins/sweetalert.min.js"></script>
