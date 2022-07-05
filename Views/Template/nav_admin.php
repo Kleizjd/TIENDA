@@ -13,7 +13,7 @@
 
                 </a>
                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="<?= base_url() ?>/perfil"> Perfil</a>
+                  <a class="dropdown-item" href="<?= base_url() ?>/usuarios/perfil"> Perfil</a>
                   <a class="dropdown-item" href="<?= base_url() ?>/dashboard">
                     <span class="badge bg-red pull-right">50%</span>
                     <span>Opciones</span>

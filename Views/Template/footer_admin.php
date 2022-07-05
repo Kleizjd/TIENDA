@@ -73,6 +73,9 @@
  <script src="<?= media() ?>/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
  <!-- slimscrollbar scrollbar JavaScript -->
  <script src="<?= media() ?>/template/dist/js/perfect-scrollbar.jquery.min.js"></script>
+ <script src="<?= media() ?>/vendors/raphael/raphael.min.js"></script>
+ <script src="<?= media() ?>/vendors/morris.js/morris.min.js"></script>
+
  <!-- Custom Theme Scripts -->
 
  <script src="<?= media() ?>/build/js/custom.min.js"></script>

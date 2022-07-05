@@ -12,6 +12,7 @@
   <!-- <link rel="stylesheet" type="text/css" href="<?= media() ?>/css/bootstrap-select.min.css">  -->
   <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
   <!-- <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css"> -->
+  <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/mystyle.css">
   <!-- Bootstrap -->
   <link href="<?= media() ?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -43,12 +44,12 @@
   <!-- ============================================================== -->
   <!-- Preloader - style you can find in spinners.css -->
   <!-- ============================================================== -->
-  <div class="preloader">
+  <!-- <div class="preloader">
     <div class="loader">
       <div class="loader__figure"></div>
       <p class="loader__label">Tienda Virtual</p>
     </div>
-  </div>
+  </div> -->
   <div class="container body">
     <div class="main_container">
 
