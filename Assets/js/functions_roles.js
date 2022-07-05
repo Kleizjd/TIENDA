@@ -82,16 +82,18 @@ function openModal(){
 }
 
 window.addEventListener('load', function() {
-    fntEditRol();
-    fntDelRol();
+    // fntEditRol();
+    // fntDelRol();
     // fntPermisos();
 }, false);
 
 function fntEditRol(idrol){
-    var btnEditRol = document.querySelectorAll(".btnEditRol");
-    btnEditRol.forEach(function(btnEditRol){
-        btnEditRol.addEventListener('click', function(){
-    var idrol = this.getAttribute("rl");
+    var idrol = idrol;
+
+    // var btnEditRol = document.querySelectorAll(".btnEditRol");
+    // btnEditRol.forEach(function(btnEditRol){
+    //     btnEditRol.addEventListener('click', function(){
+    // var idrol = this.getAttribute("rl");
 
     document.querySelector('#titleModal').innerHTML ="Actualizar Rol";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
@@ -131,17 +133,17 @@ function fntEditRol(idrol){
             }
         }
     }
-    });
-    });
+    // });
+    // });
 
 }
 
 function fntDelRol(idrol){
-    // var idrol = idrol;
-    var btnDelRol = document.querySelectorAll(".btnDelRol");
-    btnDelRol.forEach(function(btnDelRol){
-        btnDelRol.addEventListener('click', function(){
-            var idrol = this.getAttribute("rl");
+    var idrol = idrol;
+    // var btnDelRol = document.querySelectorAll(".btnDelRol");
+    // btnDelRol.forEach(function(btnDelRol){
+    //     btnDelRol.addEventListener('click', function(){
+            // var idrol = this.getAttribute("rl");
 
             swal({
                 title: "Eliminar Rol",
@@ -157,7 +159,7 @@ function fntDelRol(idrol){
                 if (isConfirm) 
                 {
                     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-                    var ajaxUrl = base_url+'/Roles/delRol/';
+                    var ajaxUrl = base_url+'/Roles/delRol';
                     var strData = "idrol="+idrol;
                     request.open("POST",ajaxUrl,true);
                     request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -168,28 +170,26 @@ function fntDelRol(idrol){
                             if(objData.status)
                             {
                                 swal("Eliminar!", objData.msg , "success");
-                                tableRoles.api().ajax.reload(function(){
-                                    fntEditRol();
-                                    fntDelRol();
-                                    fntPermisos();
-                                });
+                                tableRoles.api().ajax.reload(
+                                    // function(){ fntEditRol(); fntDelRol(); fntPermisos();}
+                                );
                             }else{
                                 swal("Atención!", objData.msg , "error");
                             }
                         }
                     }
                 }
-        
+              
             });
-        })
+    //     })
 
-    });
+    // });
   
 }
 
 function fntPermisos(idrol){
-    // var idrol = idrol;
-    var idrol = this.getAttribute("rl");
+    var idrol = idrol;
+    // var idrol = this.getAttribute("rl");
 
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/Permisos/getPermisosRol/'+idrol;
