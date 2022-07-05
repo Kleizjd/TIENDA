@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     tableUsuarios = $('#tableUsuarios').dataTable( {
         "autoWidth": false,
-        
         "aProcessing":true,
         "aServerSide":true,
         "language": {

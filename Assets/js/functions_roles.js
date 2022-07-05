@@ -3,11 +3,10 @@ var divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 
 	tableRoles = $('#tableRoles').dataTable( {
+        "autoWidth": false,
 		"aProcessing":true,
 		"aServerSide":true,
-        "language": {
-        	"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-        },
+        "language": {"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"},
         "ajax":{
             "url": " "+base_url+"/Roles/getRoles",
             "dataSrc":""
@@ -62,10 +61,7 @@ document.addEventListener('DOMContentLoaded', function(){
             // divLoading.style.display = "none";
             return false;
         }
-
-        
     }
-
 });
 
 // $('#tableRoles').DataTable();
