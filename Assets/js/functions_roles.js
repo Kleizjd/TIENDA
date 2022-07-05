@@ -88,6 +88,11 @@ window.addEventListener('load', function() {
 }, false);
 
 function fntEditRol(idrol){
+    var btnEditRol = document.querySelectorAll(".btnEditRol");
+    btnEditRol.forEach(function(btnEditRol){
+        btnEditRol.addEventListener('click', function(){
+    var idrol = this.getAttribute("rl");
+
     document.querySelector('#titleModal').innerHTML ="Actualizar Rol";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
@@ -126,6 +131,8 @@ function fntEditRol(idrol){
             }
         }
     }
+    });
+    });
 
 }
 
@@ -164,7 +171,7 @@ function fntDelRol(idrol){
                                 tableRoles.api().ajax.reload(function(){
                                     fntEditRol();
                                     fntDelRol();
-                                    // fntPermisos();
+                                    fntPermisos();
                                 });
                             }else{
                                 swal("Atención!", objData.msg , "error");
@@ -181,7 +188,9 @@ function fntDelRol(idrol){
 }
 
 function fntPermisos(idrol){
-    var idrol = idrol;
+    // var idrol = idrol;
+    var idrol = this.getAttribute("rl");
+
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/Permisos/getPermisosRol/'+idrol;
     request.open("GET",ajaxUrl,true);
