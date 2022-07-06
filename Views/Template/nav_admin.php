@@ -173,12 +173,12 @@
                   <?php } ?>
 
                   <?php if (!empty($_SESSION['permisos'][MSUSCRIPTORES]['r'])) { ?>
-                    <li><a class="app-menu__item" href="<?= base_url() ?>/subscritores"><i class="app-menu__icon fas fa-user-tie"></i>Subscritores</a>
+                    <li><a class="app-menu__item" href="<?= base_url() ?>/suscriptores"><i class="app-menu__icon fas fa-user-tie"></i>Suscritores</a>
                     </li>
                   <?php } ?>
 
                   <?php if (!empty($_SESSION['permisos'][MDCONTACTOS]['r'])) { ?>
-                    <li><a class="app-menu__item" href="<?= base_url() ?>/mensajes"><i class="app-menu__icon fas fa-envelope"></i> Mensajes</a>
+                    <li><a class="app-menu__item" href="<?= base_url() ?>/contactos"><i class="app-menu__icon fas fa-envelope"></i> Mensajes</a>
                     </li>
                   <?php } ?>
 

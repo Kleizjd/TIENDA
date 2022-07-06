@@ -4,8 +4,7 @@ getModal('modalCategorias', $data);
 ?>
 <div id="contentAjax"></div>
 <div class="right_col" role="main">
-  <div class="">
-    <main class="">
+    <div class="">
       <div class="app-title">
         <div>
           <h1><i class="fas fa-box-tissue"></i> <?= $data['page_title'] ?>
@@ -42,7 +41,6 @@ getModal('modalCategorias', $data);
           </div>
         </div>
       </div>
-    </main>
   </div>
 </div>
 
