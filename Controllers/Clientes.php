@@ -41,7 +41,7 @@ class Clientes extends Controllers{
 				$strNit = strClean($_POST['txtNit']);
 				$strNomFiscal = strClean($_POST['txtNombreFiscal']);
 				$strDirFiscal = strClean($_POST['txtDirFiscal']);
-				$intTipoId = intval(7); 
+				$intTipoId = intval(3); 
 				$request_user = "";
 				if($idUsuario == 0)
 				{
@@ -61,19 +61,19 @@ class Clientes extends Controllers{
 																			$strDirFiscal);
 					}
 				}else{
-					// $option = 2;
-					// $strPassword =  empty($_POST['txtPassword']) ? "" : hash("SHA256",$_POST['txtPassword']);
-					// if($_SESSION['permisosMod']['u']){
-					// 	$request_user = $this->model->updateUsuario($idUsuario,
-					// 												$strIdentificacion, 
-					// 												$strNombre,
-					// 												$strApellido, 
-					// 												$intTelefono, 
-					// 												$strEmail,
-					// 												$strPassword, 
-					// 												$strNit,
-					// 												$strNomFiscal,
-					// 												$strDirFiscal);}
+					$option = 2;
+					$strPassword =  empty($_POST['txtPassword']) ? "" : hash("SHA256",$_POST['txtPassword']);
+					if($_SESSION['permisosMod']['u']){
+						$request_user = $this->model->updateCliente($idUsuario,
+																	$strIdentificacion, 
+																	$strNombre,
+																	$strApellido, 
+																	$intTelefono, 
+																	$strEmail,
+																	$strPassword, 
+																	$strNit,
+																	$strNomFiscal,
+																	$strDirFiscal);}
 
 				}
 
