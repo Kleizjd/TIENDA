@@ -15,7 +15,8 @@
  </script>
  <script type="text/javascript" src="<?= media(); ?>/js/functions_admin.js"></script>
  <script src="<?= media(); ?>/js/<?= $data['page_functions_js']; ?>"></script>
-
+  <!-- The javascript plugin to display page loading on top-->
+  <script src="<?= media(); ?>/js/plugins/pace.min.js"></script>
  <!-- jQuery -->
  <script src="<?= media(); ?>/js/popper.min.js"></script>
  <script src="<?= media() ?>/vendors/jquery/dist/jquery-3.3.1.min.js"></script>
@@ -75,6 +76,7 @@
  <script src="<?= media() ?>/template/dist/js/perfect-scrollbar.jquery.min.js"></script>
  <script src="<?= media() ?>/vendors/raphael/raphael.min.js"></script>
  <script src="<?= media() ?>/vendors/morris.js/morris.min.js"></script>
+
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
