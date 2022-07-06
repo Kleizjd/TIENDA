@@ -1,0 +1,31 @@
+let formData = new FormData(formUsuario);
+      let ajaxUrl = base_url + '/Usuarios/setUsuario';
+      fetch(ajaxUrl, {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.json())
+        .then(objData => {
+          if (objData.status) {
+            $('#modalFormUsuario').modal("hide");
+            formUsuario.reset();
+            tableUsuarios.ajax.reload(null, false);
+            Swal.fire("Usuarios", objData.msg, "success");
+          } else {
+            Swal.fire("Error", objData.msg, "error");
+          }
+        })
+        .catch(error => {
+          Swal.fire("Oops!", "Ocurrio un error en el Sistema, por favor intentalo de nuevo más tarde.", "error");
+          console.log("Error: ", error)
+        })
+        // echo "INSERT INTO persona(identificacion,nombres,apellidos,telefono,email_user,password,rolid,nit,nombrefiscal,direccionfiscal) VALUES('".$this->strIdentificacion."',
+			// 					'".$this->strNombre."',
+			// 					'".$this->strApellido."',
+			// 					'".$this->intTelefono."',
+			// 					'".$this->strEmail."',
+			// 					'".$this->strPassword."',
+			// 					'".$this->intTipoId."',
+			// 					'".$this->strNit."',
+			// 					'".$this->strNomFiscal."',
+			// 					'".$this->strDirFiscal."')";

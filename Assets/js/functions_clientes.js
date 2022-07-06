@@ -73,13 +73,13 @@ document.addEventListener('DOMContentLoaded', function(){
                 return false;
             }
 
-            // let elementsValid = document.getElementsByClassName("valid");
-            // for (let i = 0; i < elementsValid.length; i++) { 
-            //     if(elementsValid[i].classList.contains('is-invalid')) { 
-            //         swal("Atención", "Por favor verifique los campos en rojo." , "error");
-            //         return false;
-            //     } 
-            // } 
+            let elementsValid = document.getElementsByClassName("valid");
+            for (let i = 0; i < elementsValid.length; i++) { 
+                if(elementsValid[i].classList.contains('is-invalid')) { 
+                    swal("Atención", "Por favor verifique los campos en rojo." , "error");
+                    return false;
+                } 
+            } 
             // divLoading.style.display = "flex";
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             let ajaxUrl = base_url+'/Clientes/setCliente'; 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         swal("Error", objData.msg , "error");
                     }
                 }
-                //divLoading.style.display = "none";
+                // divLoading.style.display = "none";
                 return false;
             }
         }

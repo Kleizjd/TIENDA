@@ -86,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function(){
             // divLoading.style.display = "flex";
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             let ajaxUrl = base_url+'/Usuarios/setUsuario'; 
+            // alert('ajax: '+ajaxUrl)
+
             let formData = new FormData(formUsuario);
             request.open("POST",ajaxUrl,true);
             request.send(formData);

@@ -21,7 +21,7 @@
 			parent::__construct();
 		}	
 
-		public function insertUsuario(string $identificacion, string $nombre, string $apellido, int $telefono, string $email, string $password, int $tipoid, int $status){
+		public function insertUsuario(string $identificacion, string $nombre, string $apellido, int $telefono, string $email, string $password, string $tipoid, int $status){
 
 			$this->strIdentificacion = $identificacion;
 			$this->strNombre = $nombre;
@@ -38,9 +38,16 @@
 			$request = $this->select_all($sql);
 
 			if(empty($request))
-			{
-				$query_insert  = "INSERT INTO persona(identificacion,nombres,apellidos,telefono,email_user,password,rolid,status) 
-								  VALUES(?,?,?,?,?,?,?,?)";
+			{	
+				// echo "INSERT INTO persona(identificacion,nombres,apellidos,telefono,email_user,password,rolid,status) VALUES('".$this->strIdentificacion."',
+				// 				'".$this->strNombre."',
+				// 				'".$this->strApellido."',
+				// 				'".$this->intTelefono."',
+				// 				'".$this->strEmail."',
+				// 				'".$this->strPassword."',
+				// 				'".$this->intTipoId."',
+				// 				'".$this->intStatus."')";
+				$query_insert  = "INSERT INTO persona(identificacion,nombres,apellidos,telefono,email_user,password,rolid,status) VALUES(?,?,?,?,?,?,?,?)";
 	        	$arrData = array($this->strIdentificacion,
         						$this->strNombre,
         						$this->strApellido,
