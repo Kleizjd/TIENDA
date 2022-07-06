@@ -9,9 +9,7 @@ $(document).on('focusin', function(e) {
 tableProductos = $('#tableProductos').dataTable( {
     "aProcessing":true,
     "aServerSide":true,
-    "language": {
-        "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
-    },
+    "language": {"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"},
     "ajax":{
         "url": " "+base_url+"/Productos/getProductos",
         "dataSrc":""

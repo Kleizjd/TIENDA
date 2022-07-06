@@ -75,7 +75,10 @@
  <script src="<?= media() ?>/template/dist/js/perfect-scrollbar.jquery.min.js"></script>
  <script src="<?= media() ?>/vendors/raphael/raphael.min.js"></script>
  <script src="<?= media() ?>/vendors/morris.js/morris.min.js"></script>
-
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="<?= media() ?>/js/datepicker/jquery-ui.min.js"></script>
  <!-- Custom Theme Scripts -->
 
  <script src="<?= media() ?>/build/js/custom.min.js"></script>
