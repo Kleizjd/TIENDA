@@ -157,26 +157,26 @@ getModal('modalPerfil', $data); ?>
                     <div class="tab-pane active" id="settings" role="tabpanel">
                       <div class="card-body">
                         <form id="formPerfil" name="formPerfil" class="form-horizontal">
-                          <p class="text-primary">Los campos con asterisco (<span class="required">*</span>) son obligatorios.</p>
+                          <p class="text-primary">Los campos con asterisco (<span style="color:red">*</span>) son obligatorios.</p>
                           <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="txtIdentificacion">Identificación <span class="required">*</span></label>
+                              <label for="txtIdentificacion">Identificación <span style="color:red">*</span></label>
                               <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" value="<?= $_SESSION['userData']['identificacion']; ?>" required="">
                             </div>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="txtNombre">Nombres <span class="required">*</span></label>
+                              <label for="txtNombre">Nombres <span style="color:red">*</span></label>
                               <input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" value="<?= $_SESSION['userData']['nombres']; ?>" required="">
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="txtApellido">Apellidos <span class="required">*</span></label>
+                              <label for="txtApellido">Apellidos <span style="color:red">*</span></label>
                               <input type="text" class="form-control valid validText" id="txtApellido" name="txtApellido" value="<?= $_SESSION['userData']['apellidos']; ?>" required="">
                             </div>
                           </div>
                           <div class="form-row">
                             <div class="form-group col-md-6">
-                              <label for="txtTelefono">Teléfono <span class="required">*</span></label>
+                              <label for="txtTelefono">Teléfono <span style="color:red">*</span></label>
                               <input type="text" class="form-control valid validNumber" id="txtTelefono" name="txtTelefono" value="<?= $_SESSION['userData']['telefono']; ?>" required="" onkeypress="return controlTag(event);">
                             </div>
                             <div class="form-group col-md-6">

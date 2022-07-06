@@ -187,7 +187,7 @@ function sessionUser(int $idpersona)
 function sessionStart()
 { // tiempo  limite para una session activa
     session_start();
-    $inactive = 60;
+    $inactive = activeSession;
     if ($_SESSION['timeout']) {
         $session_in = time() - $_SESSION['inicio'];
         if ($session_in > $inactive) {

@@ -1,9 +1,17 @@
-<?php 
+<?php
+
+use Spipu\Html2Pdf\Tag\Html\S;
 
 	class Permisos extends Controllers{
 		public function __construct()
 		{
+			// sessionStart();
 			parent::__construct();
+			// if(empty($_SESSION['login']))
+			// {
+			// 	header('Location: '.base_url().'/login');
+			// 	die();
+			// }
 		}
 
 		public function getPermisosRol(int $idrol)
