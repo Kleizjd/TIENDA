@@ -16,9 +16,8 @@
 
 		public function Categorias()
 		{
-			if(empty($_SESSION['permisosMod']['r'])){
-				header("Location:".base_url().'/dashboard');
-			}
+			if(empty($_SESSION['permisosMod']['r'])){ header("Location:".base_url().'/dashboard'); }
+			
 			$data['page_tag'] = "Categorias";
 			$data['page_title'] = "CATEGORIAS <small>Tienda Virtual</small>";
 			$data['page_name'] = "categorias";
@@ -29,6 +28,7 @@
 		public function setCategoria(){
 			// dep($_POST);
 			// dep($_FILES);
+			// exit();
 			if($_POST){
 				if(empty($_POST['txtNombre']) || empty($_POST['txtDescripcion']) || empty($_POST['listStatus']) )
 				{

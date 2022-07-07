@@ -97,7 +97,7 @@
 		{
 			if($_SESSION['permisosMod']['r']){
 				$arrData = $this->model->selectUsuarios();
-				for ($i=0; $i < count($arrData); $i++) {
+				for ($i=0; $i <buttonbutton count($arrData); $i++) {
 					$btnView = '';
 					$btnEdit = '';
 					$btnDelete = '';
@@ -172,7 +172,7 @@
 			}
 			die();
 		}
-
+//                 <!------------------  [ Profile // Perfil ]     !-------------->
 		public function perfil(){
 			$data['page_tag'] = "Perfil";
 			$data['page_title'] = "Perfil de usuario";
@@ -241,6 +241,81 @@
 			}
 			die();
 		}
+	// public function setFotoPerfil(){
+	// 	if($_POST){
+	// 		if(empty($_POST['txtNombre']) || empty($_POST['txtDescripcion']) || empty($_POST['listStatus']) )
+	// 		{
+	// 			$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
+	// 		}else{
+
+	// 			$intIdFotoPerfil = intval($_POST['idFotoPerfil']);
+	// 			$strFotoPerfil =  strClean($_POST['txtNombre']);
+	// 			$strDescipcion = strClean($_POST['txtDescripcion']);
+	// 			$intStatus = intval($_POST['listStatus']);
+
+	// 			$ruta = strtolower(clear_cadena($strFotoPerfil));
+	// 			$ruta = str_replace(" ","-",$ruta);
+
+	// 			$foto   	 	= $_FILES['foto'];
+	// 			$nombre_foto 	= $foto['name'];
+	// 			$type 		 	= $foto['type'];
+	// 			$url_temp    	= $foto['tmp_name'];
+	// 			$imgPortada 	= 'portada_categoria.png';
+	// 			$request_cateria = "";
+	// 			if($nombre_foto != ''){
+	// 				$imgPortada = 'img_'.md5(date('d-m-Y H:i:s')).'.jpg';
+	// 			}
+
+	// 			if($intIdFotoPerfil == 0)
+	// 			{
+	// 				//Crear
+	// 				if($_SESSION['permisosMod']['w']){
+	// 					$request_cateria = $this->model->inserCategoria($strFotoPerfil, $strDescipcion,$imgPortada,$ruta,$intStatus);
+	// 					$option = 1;
+	// 				}
+	// 			}else{
+	// 				//Actualizar
+	// 				if($_SESSION['permisosMod']['u']){
+	// 					if($nombre_foto == ''){
+	// 						if($_POST['foto_actual'] != 'portada_categoria.png' && $_POST['foto_remove'] == 0 ){
+	// 							$imgPortada = $_POST['foto_actual'];
+	// 						}
+	// 					}
+	// 					$request_cateria = $this->model->updateCategoria($intIdFotoPerfil,$strFotoPerfil, $strDescipcion,$imgPortada,$ruta,$intStatus);
+	// 					$option = 2;
+	// 				}
+	// 			}
+	// 			if($request_cateria > 0 )
+	// 			{
+	// 				if($option == 1)
+	// 				{
+	// 					$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+	// 					if($nombre_foto != ''){ uploadImagePerfil($foto,$imgPortada); }
+	// 				}else{
+	// 					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+	// 					if($nombre_foto != ''){ uploadImagePerfil($foto,$imgPortada); }
+
+	// 					if(($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
+	// 						|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')){
+	// 						deleteFile($_POST['foto_actual']);
+	// 					}
+	// 				}
+	// 			}else if($request_cateria == 'exist'){
+	// 				$arrResponse = array('status' => false, 'msg' => '¡Atención! La categoría ya existe.');
+	// 			}else{
+	// 				$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+	// 			}
+	// 		}
+	// 		echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+	// 	}
+	// 	die();
+	// }
+	// function uploadImagePerfil(array $data, string $name)
+	// {
+	// 	$url_temp = $data['tmp_name'];
+	// 	$destino    = 'Views/Usuarios/UploadsProfile/' . $name;
+	// 	$move = move_uploaded_file($url_temp, $destino);
+	// 	return $move;
+	// }
 
 	}
- ?>

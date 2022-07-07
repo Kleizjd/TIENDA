@@ -11,7 +11,7 @@
 	const DB_USER = "root";
 	const DB_PASSWORD = "";
 	const DB_CHARSET = "utf8";
-	const activeSession = 50000;
+	const activeSession = 10000000;
 	//Para envío de correo
 	const ENVIRONMENT = 1; // Local: 0, Produccón: 1;
 

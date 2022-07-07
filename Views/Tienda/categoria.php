@@ -1,7 +1,4 @@
-<?php 
-headerTienda($data);
-$arrProductos = $data['productos'];
- ?>
+<?php  headerTienda($data); $arrProductos = $data['productos']; ?>
 <br><br><br>
 <hr>
 	<!-- Product -->
