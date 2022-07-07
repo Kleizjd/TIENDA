@@ -3,21 +3,22 @@ getModal('modalProductos', $data); ?>
 <div id="contentAjax"></div>
 <div class="right_col" role="main">
   <div class="">
-    <div class="page-title">
-      <div class="title_left">
-        <!-- <h3>Usuarios</h3> -->
-        <h3><i class="fas fa-box"></i> <?= $data['page_title'] ?>
-        </h3>
-      </div>
-
-      <div class="title_right">
-        <div class="col-md-6 col-sm-6 form-group pull-right top_search">
-          <div class="input-group center">
-            <ul class="app-breadcrumb breadcrumb">
-              <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-              <li class="breadcrumb-item"><a href="<?= base_url(); ?>/usuarios"><?= $data['page_title'] ?></a></li>
-            </ul>
-          </div>
+    <div class="app-title">
+      <div class="row">
+        <div class="col-8">
+          <h1>
+            <i class="fas fa-user-tag"></i> <?= $data['page_title'] ?>
+            <?php if ($_SESSION['permisosMod']['w']) { ?>
+              <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
+            <?php } ?>
+          </h1>
+        </div>
+        <div class="col-4">
+          <br>
+          <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item"><a href="<?= base_url(); ?>/clientes"><?= $data['page_title'] ?></a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -25,11 +26,6 @@ getModal('modalProductos', $data); ?>
       <div class="row">
         <div class="col-md-12 col-sm-12 ">
           <div class="x_panel">
-            <div class="x_title">
-              <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
-
-              <div class="clearfix"></div>
-            </div>
             <div class="x_content">
               <div class="row">
                 <div class="col-md-12">
@@ -61,7 +57,7 @@ getModal('modalProductos', $data); ?>
         </div>
       </div>
     </div>
-   
+
   </div>
 </div>
 
