@@ -1,6 +1,4 @@
-<?php
-headerAdmin($data);
-?>
+<?php headerAdmin($data); ?>
 <div id="contentAjax"></div>
 <div class="right_col" role="main">
   <div class="">

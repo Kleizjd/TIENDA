@@ -1,7 +1,4 @@
-<?php
-headerAdmin($data);
-getModal('modalRoles', $data);
-?>
+<?php headerAdmin($data); getModal('modalRoles', $data); ?>
 <!-- page content -->
 <div id="contentAjax"></div> 
 <div class="right_col" role="main">

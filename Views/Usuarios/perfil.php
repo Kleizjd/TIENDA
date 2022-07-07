@@ -1,5 +1,4 @@
-<?php headerAdmin($data);
-getModal('modalPerfil', $data); ?>
+<?php headerAdmin($data); getModal('modalPerfil', $data); ?>
 <!-- page content -->
 <div class="right_col" role="main">
   <div class="">

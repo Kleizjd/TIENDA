@@ -1,12 +1,8 @@
-<?php 
-headerTienda($data);
+<?php headerTienda($data);
 $banner = $data['page']['portada'];
-$idpagina = $data['page']['idpost'];
+$idpagina = $data['page']['idpost'];?>
 
- ?>
-<script>
- 	document.querySelector('header').classList.add('header-v4');
- </script>
+<script>document.querySelector('header').classList.add('header-v4');</script>
 <!-- Title page -->
 <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url(<?= $banner ?>);">
 	<h2 class="ltext-105 cl0 txt-center">
@@ -14,9 +10,7 @@ $idpagina = $data['page']['idpost'];
 	</h2>
 </section>
 
-<?php
-	if(viewPage($idpagina)){	
- ?>
+<?php if(viewPage($idpagina)){ ?>
 <!-- Content page -->
 <section class="bg0 p-t-104 p-b-116">
 	<div class="container">

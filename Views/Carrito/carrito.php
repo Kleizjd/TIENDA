@@ -1,6 +1,4 @@
-<?php 
-headerTienda($data);
-?>
+<?php headerTienda($data);?>
  <br><br><br>
 <hr>
 	<!-- breadcrumb -->

@@ -12,9 +12,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <?php
-          if(empty($data['arrPedido'])){
-        ?>
+        <?php if(empty($data['arrPedido'])){ ?>
         <p>Datos no encontrados</p>
         <?php }else{
             $cliente = $data['arrPedido']['cliente']; 

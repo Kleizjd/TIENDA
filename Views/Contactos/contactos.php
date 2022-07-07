@@ -1,7 +1,4 @@
-<?php 
-    headerAdmin($data); 
-    getModal('modalMensaje',$data);
-?>
+<?php headerAdmin($data); getModal('modalMensaje',$data) ?>
 <div id="contentAjax"></div>
 <div class="right_col" role="main">
   <div class="">
@@ -48,6 +45,6 @@
               </div>
             </div>
         </div>
-            </div>
+</div>
 <?php footerAdmin($data); ?>
     

@@ -1,6 +1,4 @@
-<?php 
-headerTienda($data);
-
+<?php headerTienda($data);
 $subtotal = 0;
 $total = 0;
 foreach ($_SESSION['arrCarrito'] as $producto) {
@@ -10,7 +8,6 @@ $total = $subtotal + COSTOENVIO;
 
 $tituloTerminos = !empty(getInfoPage(PTERMINOS)) ? getInfoPage(PTERMINOS)['titulo'] : "";
 $infoTerminos = !empty(getInfoPage(PTERMINOS)) ? getInfoPage(PTERMINOS)['contenido'] : "";
-
 ?>
 <script
     src="https://www.paypal.com/sdk/js?client-id=<?= IDCLIENTE ?>&currency=<?= CURRENCY ?>">

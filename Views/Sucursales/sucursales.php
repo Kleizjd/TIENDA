@@ -1,5 +1,4 @@
-<?php 
-headerTienda($data);
+<?php headerTienda($data);
 $banner = $data['page']['portada'];
 $idpagina = $data['page']['idpost'];
  ?>

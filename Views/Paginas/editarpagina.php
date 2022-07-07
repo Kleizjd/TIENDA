@@ -1,11 +1,9 @@
-<?php 
-    headerAdmin($data); 
+<?php headerAdmin($data); 
     $option = $data['infoPage']['status'];
     $fotoActual = $data['infoPage']['portada'];
     $fotoRemove = 0;
     $imgPortada = $fotoActual != "" ? '<img id="img" src="'.media()."/images/uploads/".$fotoActual.'">' : "";
-    $pageRuta = base_url().'/'.$data['infoPage']['ruta'];
-?>
+    $pageRuta = base_url().'/'.$data['infoPage']['ruta'];?>
   <main class="app-content">    
       <div class="app-title">
         <div>

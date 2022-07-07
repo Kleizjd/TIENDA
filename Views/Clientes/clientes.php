@@ -1,5 +1,4 @@
-       <?php headerAdmin($data);
-		getModal('modalClientes', $data); ?>
+       <?php headerAdmin($data); getModal('modalClientes', $data); ?>
        <!-- page content -->
        <div id="contentAjax"></div>
        <div class="right_col" role="main">
