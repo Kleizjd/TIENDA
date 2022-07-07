@@ -1,6 +1,4 @@
-<?php 
-headerTienda($data);
- ?>
+<?php headerTienda($data); ?>
 <br><br><br>
 <div class="jumbotron text-center">
   <h1 class="display-4">¡Gracias por tu compra!</h1>
@@ -18,6 +16,4 @@ headerTienda($data);
   <a class="btn btn-primary btn-lg" href="<?= base_url(); ?>" role="button">Continuar</a>
 </div>
 
-<?php 
-	footerTienda($data);
-?>
+<?php footerTienda($data); ?>

@@ -1,5 +1,4 @@
-<?php headerAdmin($data);
-getModal('modalCategorias', $data); ?>
+<?php headerAdmin($data); getModal('modalCategorias', $data); ?>
 <!-- page content -->
 <div id="contentAjax"></div>
 <div class="right_col" role="main">

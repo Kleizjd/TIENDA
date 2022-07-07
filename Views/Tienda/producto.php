@@ -1,11 +1,9 @@
-<?php 
-headerTienda($data);
+<?php headerTienda($data);
 $arrProducto = $data['producto'];
 $arrProductos = $data['productos'];
 $arrImages = $arrProducto['images']; 
 $rutacategoria = $arrProducto['categoriaid'].'/'.$arrProducto['ruta_categoria'];
-$urlShared = base_url()."/tienda/producto/".$arrProducto['idproducto']."/".$arrProducto['ruta'];
- ?>
+$urlShared = base_url()."/tienda/producto/".$arrProducto['idproducto']."/".$arrProducto['ruta']; ?>
 <br><br><br>
 <hr>
 	<!-- breadcrumb -->
@@ -178,6 +176,4 @@ $urlShared = base_url()."/tienda/producto/".$arrProducto['idproducto']."/".$arrP
 			</div>
 		</div>
 	</section>
-<?php 
-	footerTienda($data);
-?>
+<?php footerTienda($data); ?>

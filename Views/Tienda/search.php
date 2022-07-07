@@ -1,7 +1,4 @@
-<?php 
-headerTienda($data);
-$arrProductos = $data['productos'];
- ?>
+<?php headerTienda($data); $arrProductos = $data['productos']; ?>
 <br><br><br>
 <hr>
 	<!-- Product -->
@@ -90,20 +87,16 @@ $arrProductos = $data['productos'];
 				</div>
 			<?php 
 				}
-			}else{
-				?>
+			}else{ ?>
 			<p>No hay productos para mostrar <a href="<?= base_url() ?>/tienda"> Ver productos</a></p>
 			<?php 
-			} 
-			?>
+			} ?>
 			</div>
 
 			<!-- Load more -->
-			<?php 
-				if(count($data['productos']) > 0){
+			<?php if(count($data['productos']) > 0){
 					$prevPagina = $data['pagina'] - 1;
-					$nextPagina = $data['pagina'] + 1;
-			 ?>
+					$nextPagina = $data['pagina'] + 1; ?>
 			<div class="flex-c-m flex-w w-full p-t-45">
 			<?php if($data['pagina'] > 1){ ?>
 				<a href="<?= base_url() ?>/tienda/search?p=<?= $prevPagina.'&s='.$data['busqueda'] ?>" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04"> <i class="fas fa-chevron-left"></i> &nbsp; Anterior </a>&nbsp;&nbsp;
@@ -117,6 +110,4 @@ $arrProductos = $data['productos'];
 			 ?>
 		</div>
 	</div>
-<?php 
-	footerTienda($data);
-?>
+<?php footerTienda($data); ?>

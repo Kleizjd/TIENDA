@@ -1,7 +1,4 @@
-<?php 
-headerTienda($data);
-$arrProductos = $data['productos'];
- ?>
+ <?php headerTienda($data); $arrProductos = $data['productos']; ?>
 <br><br><br>
 <hr>
 	<!-- Product -->
@@ -115,6 +112,4 @@ $arrProductos = $data['productos'];
 			 ?>
 		</div>
 	</div>
-<?php 
-	footerTienda($data);
-?>
+<?php footerTienda($data); ?>
