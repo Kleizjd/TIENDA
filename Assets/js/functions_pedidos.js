@@ -83,7 +83,7 @@ function fntTransaccion(idtransaccion){
             }else{
                 swal("Error", objData.msg , "error");
             }
-            divLoading.style.display = "none";
+            //divLoading.style.display = "none";
             return false;
         }
     }
@@ -129,7 +129,7 @@ function fntReembolsar(){
                     }else{
                         swal("Error", objData.msg , "error");
                     }
-                    divLoading.style.display = "none";
+                    //divLoading.style.display = "none";
                     return false;
                 }
             }
@@ -159,7 +159,7 @@ function fntEditInfo(element,idpedido){
             }else{
                 swal("Error", objData.msg , "error");
             }
-            divLoading.style.display = "none";
+            //divLoading.style.display = "none";
             return false;
 
         }
@@ -205,7 +205,7 @@ function fntUpdateInfo(){
                     swal("Error", objData.msg , "error");
                 } 
 
-                divLoading.style.display = "none";
+                //divLoading.style.display = "none";
                 return false;
             }
         }

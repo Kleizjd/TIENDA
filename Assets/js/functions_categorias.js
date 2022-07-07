@@ -4,6 +4,7 @@ let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 
     tableCategorias = $('#tableCategorias').dataTable( {
+        "autoWidth":false,
         "aProcessing":true,
         "aServerSide":true,
         "language": {
@@ -107,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function(){
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
-        divLoading.style.display = "flex";
+        //divLoading.style.display = "flex";
         let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         let ajaxUrl = base_url+'/Categorias/setCategoria'; 
         let formData = new FormData(formCategoria);
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     swal("Error", objData.msg , "error");
                 }              
             } 
-            divLoading.style.display = "none";
+            //divLoading.style.display = "none";
             return false;
         }
     }

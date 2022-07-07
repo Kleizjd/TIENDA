@@ -178,7 +178,7 @@ if(document.querySelector("#formRegister")){
                     swal("Error", objData.msg , "error");
                 }
             }
-            //divLoading.style.display = "none";
+            ////divLoading.style.display = "none";
             return false;
         }
     }
@@ -343,7 +343,7 @@ if(document.querySelector("#btnComprar")){
 		    			swal("", objData.msg , "error");
 		    		}
 		    	}
-		    	//divLoading.style.display = "none";
+		    	////divLoading.style.display = "none";
             	return false;
 		    }
 		}
@@ -388,7 +388,7 @@ if(document.querySelector("#frmSuscripcion")){
 	    			swal("", objData.msg , "error");
 	    		}
 	    	}
-	    	//divLoading.style.display = "none";
+	    	////divLoading.style.display = "none";
         	return false;
 	    
 		}
@@ -439,7 +439,7 @@ if(document.querySelector("#frmContacto")){
 	    			swal("", objData.msg , "error");
 	    		}
 	    	}
-	    	//divLoading.style.display = "none";
+	    	////divLoading.style.display = "none";
         	return false;
 		}
 

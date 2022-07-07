@@ -34,7 +34,7 @@ function fntSearchPagos(){
             if(request.readyState != 4) return;
             if(request.status == 200){
                 $("#pagosMesAnio").html(request.responseText);
-                divLoading.style.display = "none";
+                //divLoading.style.display = "none";
                 return false;
             }
         }
@@ -60,7 +60,7 @@ function fntSearchVMes(){
             if(request.readyState != 4) return;
             if(request.status == 200){
                 $("#graficaMes").html(request.responseText);
-                divLoading.style.display = "none";
+                //divLoading.style.display = "none";
                 return false;
             }
         }
@@ -86,7 +86,7 @@ function fntSearchVAnio(){
             if(request.readyState != 4) return;
             if(request.status == 200){
                 $("#graficaAnio").html(request.responseText);
-                divLoading.style.display = "none";
+                //divLoading.style.display = "none";
                 return false;
             }
         }

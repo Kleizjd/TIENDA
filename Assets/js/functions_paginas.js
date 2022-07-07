@@ -114,7 +114,7 @@ if(document.querySelector("#formPaginas")){
                     swal("Error", objData.msg , "error");
                 }
             }
-            divLoading.style.display = "none";
+            //divLoading.style.display = "none";
             return false;
         }
     }

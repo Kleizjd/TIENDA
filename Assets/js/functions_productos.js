@@ -123,7 +123,7 @@ window.addEventListener('load', function() {
                         swal("Error", objData.msg , "error");
                     }
                 }
-                divLoading.style.display = "none";
+                //divLoading.style.display = "none";
                 return false;
             }
         }
