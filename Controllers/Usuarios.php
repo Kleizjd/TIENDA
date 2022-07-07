@@ -97,7 +97,7 @@
 		{
 			if($_SESSION['permisosMod']['r']){
 				$arrData = $this->model->selectUsuarios();
-				for ($i=0; $i <buttonbutton count($arrData); $i++) {
+				for ($i=0; $i < count($arrData); $i++) {
 					$btnView = '';
 					$btnEdit = '';
 					$btnDelete = '';
@@ -241,17 +241,15 @@
 			}
 			die();
 		}
-	// public function setFotoPerfil(){
-	// 	if($_POST){
-	// 		if(empty($_POST['txtNombre']) || empty($_POST['txtDescripcion']) || empty($_POST['listStatus']) )
-	// 		{
-	// 			$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-	// 		}else{
+	public function setFotoPerfil(){
+		if($_POST){
+			if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido'])){
+				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
+			}else{
 
-	// 			$intIdFotoPerfil = intval($_POST['idFotoPerfil']);
-	// 			$strFotoPerfil =  strClean($_POST['txtNombre']);
-	// 			$strDescipcion = strClean($_POST['txtDescripcion']);
-	// 			$intStatus = intval($_POST['listStatus']);
+				$intIdFotoPerfil = intval($_POST['idFotoPerfil']);
+				$strFotoPerfil =  strClean($_POST['txtNombre']);
+				$strDescipcion = strClean($_POST['txtApellido']);
 
 	// 			$ruta = strtolower(clear_cadena($strFotoPerfil));
 	// 			$ruta = str_replace(" ","-",$ruta);
@@ -305,17 +303,17 @@
 	// 			}else{
 	// 				$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 	// 			}
-	// 		}
-	// 		echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
-	// 	}
-	// 	die();
-	// }
-	// function uploadImagePerfil(array $data, string $name)
-	// {
-	// 	$url_temp = $data['tmp_name'];
-	// 	$destino    = 'Views/Usuarios/UploadsProfile/' . $name;
-	// 	$move = move_uploaded_file($url_temp, $destino);
-	// 	return $move;
-	// }
+			}
+			echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+		}
+		die();
+	}
+	function uploadImagePerfil(array $data, string $name)
+	{
+		$url_temp = $data['tmp_name'];
+		$destino    = 'Views/Usuarios/UploadsProfile/' . $name;
+		$move = move_uploaded_file($url_temp, $destino);
+		return $move;
+	}
 
 	}
