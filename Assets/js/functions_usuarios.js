@@ -56,138 +56,186 @@ document.addEventListener('DOMContentLoaded', function(){
         "iDisplayLength": 10,
         "order":[[0,"desc"]]  
     });
-    
-    if(document.querySelector("#formUsuario")){
-        let formUsuario = document.querySelector("#formUsuario");
-        formUsuario.onsubmit = function(e) {
-            e.preventDefault();
-            let strIdentificacion = document.querySelector('#txtIdentificacion').value;
-            let strNombre = document.querySelector('#txtNombre').value;
-            let strApellido = document.querySelector('#txtApellido').value;
-            let strEmail = document.querySelector('#txtEmail').value;
-            let intTelefono = document.querySelector('#txtTelefono').value;
-            let intTipousuario = document.querySelector('#listRolid').value;
-            let strPassword = document.querySelector('#txtPassword').value;
-            let intStatus = document.querySelector('#listStatus').value;
+    if(document.querySelector("#foto")){
+	    let foto = document.querySelector("#foto");
+	    foto.onchange = function(e) {
+	        let uploadFoto = document.querySelector("#foto").value;
+	        let fileimg = document.querySelector("#foto").files;
+	        let nav = window.URL || window.webkitURL;
+	        let contactAlert = document.querySelector('#form_alert');
+	        if(uploadFoto !=''){
+	            let type = fileimg[0].type;
+	            let name = fileimg[0].name;
+	            if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png'){
+	                contactAlert.innerHTML = '<p class="errorArchivo">El archivo no es válido.</p>';
+	                if(document.querySelector('#img')){
+	                    document.querySelector('#img').remove();
+	                }
+	                document.querySelector('.delPhoto').classList.add("notBlock");
+	                foto.value="";
+	                return false;
+	            }else{  
+	                    contactAlert.innerHTML='';
+	                    if(document.querySelector('#img')){
+	                        document.querySelector('#img').remove();
+	                    }
+	                    document.querySelector('.delPhoto').classList.remove("notBlock");
+	                    let objeto_url = nav.createObjectURL(this.files[0]);
+	                    document.querySelector('.profilePicture div').innerHTML = "<img id='img' src="+objeto_url+">";
+	                }
+	        }else{
+	            alert("No selecciono foto");
+	            if(document.querySelector('#img')){
+	                document.querySelector('#img').remove();
+	            }
+	        }
+	    }
+	}
+	if(document.querySelector(".delPhoto")){
+	    let delPhoto = document.querySelector(".delPhoto");
+	    delPhoto.onclick = function(e) {
+            document.querySelector("#foto_remove").value= 1;
+	        removePhoto();
+	    }
+	}
+	if(document.querySelector(".delPhoto")){
+	    let delPhoto = document.querySelector(".delPhoto");
+	    delPhoto.onclick = function(e) {
+            document.querySelector("#foto_remove").value= 1;
+	        removePhoto();
+	    }
+	}
+    // if(document.querySelector("#formUsuario")){
+    //     let formUsuario = document.querySelector("#formUsuario");
+    //     formUsuario.onsubmit = function(e) {
+    //         e.preventDefault();
+    //         let strIdentificacion = document.querySelector('#txtIdentificacion').value;
+    //         let strNombre = document.querySelector('#txtNombre').value;
+    //         let strApellido = document.querySelector('#txtApellido').value;
+    //         let strEmail = document.querySelector('#txtEmail').value;
+    //         let intTelefono = document.querySelector('#txtTelefono').value;
+    //         let intTipousuario = document.querySelector('#listRolid').value;
+    //         let strPassword = document.querySelector('#txtPassword').value;
+    //         let intStatus = document.querySelector('#listStatus').value;
 
-            if(strIdentificacion == '' || strApellido == '' || strNombre == '' || strEmail == '' || intTelefono == '' || intTipousuario == '')
-            {
-                swal("Atención", "Todos los campos son obligatorios." , "error");
-                return false;
-            }
+    //         if(strIdentificacion == '' || strApellido == '' || strNombre == '' || strEmail == '' || intTelefono == '' || intTipousuario == '')
+    //         {
+    //             swal("Atención", "Todos los campos son obligatorios." , "error");
+    //             return false;
+    //         }
 
-            let elementsValid = document.getElementsByClassName("valid");
-            for (let i = 0; i < elementsValid.length; i++) { 
-                if(elementsValid[i].classList.contains('is-invalid')) { 
-                    swal("Atención", "Por favor verifique los campos en rojo." , "error");
-                    return false;
-                } 
-            } 
-            // divLoading.style.display = "flex";
-            let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url+'/Usuarios/setUsuario'; 
-            // alert('ajax: '+ajaxUrl)
+    //         let elementsValid = document.getElementsByClassName("valid");
+    //         for (let i = 0; i < elementsValid.length; i++) { 
+    //             if(elementsValid[i].classList.contains('is-invalid')) { 
+    //                 swal("Atención", "Por favor verifique los campos en rojo." , "error");
+    //                 return false;
+    //             } 
+    //         } 
+    //         // divLoading.style.display = "flex";
+    //         let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    //         let ajaxUrl = base_url+'/Usuarios/setUsuario'; 
+    //         // alert('ajax: '+ajaxUrl)
 
-            let formData = new FormData(formUsuario);
-            request.open("POST",ajaxUrl,true);
-            request.send(formData);
-            request.onreadystatechange = function(){
-                if(request.readyState == 4 && request.status == 200){
-                    let objData = JSON.parse(request.responseText);
-                    if(objData.status)
-                    {
-                        if(rowTable == ""){
-                            tableUsuarios.api().ajax.reload();
-                        }else{
-                            htmlStatus = intStatus == 1 ? 
-                            '<span class="badge badge-success">Activo</span>' : 
-                            '<span class="badge badge-danger">Inactivo</span>';
-                            rowTable.cells[1].textContent = strNombre;
-                            rowTable.cells[2].textContent = strApellido;
-                            rowTable.cells[3].textContent = strEmail;
-                            rowTable.cells[4].textContent = intTelefono;
-                            rowTable.cells[5].textContent = document.querySelector("#listRolid").selectedOptions[0].text;
-                            rowTable.cells[6].innerHTML = htmlStatus;
-                            rowTable = ""; 
-                        }
-                        $('#modalFormUsuario').modal("hide");
-                        formUsuario.reset();
-                        swal("Usuarios", objData.msg ,"success");
-                    }else{
-                        swal("Error", objData.msg , "error");
-                    }
-                }
-                // //divLoading.style.display = "none";
-                return false;
-            }
-        }
-    }
-    $(document).ready(function() {
-        $(document).on("submit", "#formPerfil", function(e) {
-          e.preventDefault();
-            let strIdentificacion = document.querySelector('#txtIdentificacion').value;
-            let strNombre = document.querySelector('#txtNombre').value;
-            let strApellido = document.querySelector('#txtApellido').value;
-            let intTelefono = document.querySelector('#txtTelefono').value;
-            let strPassword = document.querySelector('#txtPassword').value;
-            let strPasswordConfirm = document.querySelector('#txtPasswordConfirm').value;
+    //         let formData = new FormData(formUsuario);
+    //         request.open("POST",ajaxUrl,true);
+    //         request.send(formData);
+    //         request.onreadystatechange = function(){
+    //             if(request.readyState == 4 && request.status == 200){
+    //                 let objData = JSON.parse(request.responseText);
+    //                 if(objData.status)
+    //                 {
+    //                     if(rowTable == ""){
+    //                         tableUsuarios.api().ajax.reload();
+    //                     }else{
+    //                         htmlStatus = intStatus == 1 ? 
+    //                         '<span class="badge badge-success">Activo</span>' : 
+    //                         '<span class="badge badge-danger">Inactivo</span>';
+    //                         rowTable.cells[1].textContent = strNombre;
+    //                         rowTable.cells[2].textContent = strApellido;
+    //                         rowTable.cells[3].textContent = strEmail;
+    //                         rowTable.cells[4].textContent = intTelefono;
+    //                         rowTable.cells[5].textContent = document.querySelector("#listRolid").selectedOptions[0].text;
+    //                         rowTable.cells[6].innerHTML = htmlStatus;
+    //                         rowTable = ""; 
+    //                     }
+    //                     $('#modalFormUsuario').modal("hide");
+    //                     formUsuario.reset();
+    //                     swal("Usuarios", objData.msg ,"success");
+    //                 }else{
+    //                     swal("Error", objData.msg , "error");
+    //                 }
+    //             }
+    //             // //divLoading.style.display = "none";
+    //             return false;
+    //         }
+    //     }
+    // }
+    // $(document).ready(function() {
+    //     $(document).on("submit", "#formPerfil", function(e) {
+    //       e.preventDefault();
+    //         let strIdentificacion = document.querySelector('#txtIdentificacion').value;
+    //         let strNombre = document.querySelector('#txtNombre').value;
+    //         let strApellido = document.querySelector('#txtApellido').value;
+    //         let intTelefono = document.querySelector('#txtTelefono').value;
+    //         let strPassword = document.querySelector('#txtPassword').value;
+    //         let strPasswordConfirm = document.querySelector('#txtPasswordConfirm').value;
     
-            if (strIdentificacion == '' || strApellido == '' || strNombre == '' || intTelefono == '') {
-              swal("Atención", "Todos los campos son obligatorios.", "error");
-              return false;
-            }
+    //         if (strIdentificacion == '' || strApellido == '' || strNombre == '' || intTelefono == '') {
+    //           swal("Atención", "Todos los campos son obligatorios.", "error");
+    //           return false;
+    //         }
     
-            if (strPassword != "" || strPasswordConfirm != "") {
-              if (strPassword != strPasswordConfirm) {
-                swal("Atención", "Las contraseñas no son iguales.", "info");
-                return false;
-              }
-              if (strPassword.length < 5) {
-                swal("Atención", "La contraseña debe tener un mínimo de 5 caracteres.", "info");
-                return false;
-              }
-            }
+    //         if (strPassword != "" || strPasswordConfirm != "") {
+    //           if (strPassword != strPasswordConfirm) {
+    //             swal("Atención", "Las contraseñas no son iguales.", "info");
+    //             return false;
+    //           }
+    //           if (strPassword.length < 5) {
+    //             swal("Atención", "La contraseña debe tener un mínimo de 5 caracteres.", "info");
+    //             return false;
+    //           }
+    //         }
     
-            let elementsValid = document.getElementsByClassName("valid");
-            for (let i = 0; i < elementsValid.length; i++) {
-              if (elementsValid[i].classList.contains('is-invalid')) {
-                swal("Atención", "Por favor verifique los campos en rojo.", "error");
-                return false;
-              }
-            }
-            // divLoading.style.display = "flex";
-            let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url + '/Usuarios/putPerfil';
-            let formData = new FormData(event.target);
-            request.open("POST", ajaxUrl, true);
-            request.send(formData);
-            request.onreadystatechange = function() {
-              if (request.readyState != 4) return;
-              if (request.status == 200) {
-                let objData = JSON.parse(request.responseText);
-                if (objData.status) {
-                  $('#modalFormPerfil').modal("hide");
-                  swal({
-                    title: "",
-                    text: objData.msg,
-                    type: "success",
-                    confirmButtonText: "Aceptar",
-                    closeOnConfirm: false,
-                  }, function(isConfirm) {
-                    if (isConfirm) {
-                      location.reload();
-                    }
-                  });
-                } else {
-                  swal("Error", objData.msg, "error");
-                }
-              }
-              // //divLoading.style.display = "none";
-              return false;
-            }
-            // }
-        });
-      });
+    //         let elementsValid = document.getElementsByClassName("valid");
+    //         for (let i = 0; i < elementsValid.length; i++) {
+    //           if (elementsValid[i].classList.contains('is-invalid')) {
+    //             swal("Atención", "Por favor verifique los campos en rojo.", "error");
+    //             return false;
+    //           }
+    //         }
+    //         // divLoading.style.display = "flex";
+    //         let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    //         let ajaxUrl = base_url + '/Usuarios/putPerfil';
+    //         let formData = new FormData(event.target);
+    //         request.open("POST", ajaxUrl, true);
+    //         request.send(formData);
+    //         request.onreadystatechange = function() {
+    //           if (request.readyState != 4) return;
+    //           if (request.status == 200) {
+    //             let objData = JSON.parse(request.responseText);
+    //             if (objData.status) {
+    //               $('#modalFormPerfil').modal("hide");
+    //               swal({
+    //                 title: "",
+    //                 text: objData.msg,
+    //                 type: "success",
+    //                 confirmButtonText: "Aceptar",
+    //                 closeOnConfirm: false,
+    //               }, function(isConfirm) {
+    //                 if (isConfirm) {
+    //                   location.reload();
+    //                 }
+    //               });
+    //             } else {
+    //               swal("Error", objData.msg, "error");
+    //             }
+    //           }
+    //           // //divLoading.style.display = "none";
+    //           return false;
+    //         }
+    //         // }
+    //     });
+    //   });
     //Actualizar Datos Fiscales
     if(document.querySelector("#formDataFiscal")){
         let formDataFiscal = document.querySelector("#formDataFiscal");
@@ -236,7 +284,6 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 }, false);
-
 
 window.addEventListener('load', function() {
         fntRolesUsuario();
@@ -381,10 +428,3 @@ function openModal()
 function openModalPerfil(){
     $('#modalFormPerfil').modal('show');
 }
-// $(document).ready(function () {  
-//   $("#modalFormUsuario").on("hidden.bs.modal", function (e) {
-//     jQuery(this).removeData("bs.modal");
-//     jQuery(this).find(".modal-content").empty();
-//     // $(".modal-body1").html("Where did he go?!?!?!");
-//   });
-// });

@@ -1,4 +1,5 @@
-<?php headerAdmin($data); getModal('modalPerfil', $data); ?>
+<?php headerAdmin($data);
+getModal('modalPerfil', $data); ?>
 <!-- page content -->
 <div class="right_col" role="main">
   <div class="">
@@ -25,9 +26,24 @@
             <div class="col-md-3 col-sm-3  profile_left">
               <div class="profile_img">
                 <div id="crop-avatar">
-                  <!-- Current avatar -->
-                  <img class="img-responsive avatar-view" src="<?= media() ?>/images/uploads/jose.jpg" alt="Avatar" title="Change the avatar">
+                  <!-- <img class="img-responsive avatar-view" src="<?= media() ?>/images/uploads/jose.jpg" alt="Avatar" title="Change the avatar"> -->
+                  <div class="photo">
+                    <label for="foto">Foto (570x380)</label>
+                    <div class="profilePicture">
+                      <span class="delPhoto notBlock">X</span>
+                      <label for="foto"></label>
+                      <div>
+                        <!-- Current avatar -->
+                        <img id="img" src="<?= media(); ?>/images/svg/upload-user.svg">
+                      </div>
+                    </div>
+                    <div class="upimg">
+                      <input type="file" name="foto" id="foto">
+                    </div>
+                    <div id="form_alert"></div>
+                  </div>
                 </div>
+
               </div>
               <h2 align="center"><?= $_SESSION['userData']['nombres']; ?>
                 <?= $_SESSION['userData']['apellidos']; ?>

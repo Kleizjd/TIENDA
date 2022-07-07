@@ -12,6 +12,8 @@
   <!-- <link rel="stylesheet" type="text/css" href="<?= media() ?>/css/bootstrap-select.min.css">  -->
   <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/sweetalert.css">
   <!-- <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/style.css"> -->
+  <!-- <link href="<?= media() ?>/template/dist/css/style.css" rel="stylesheet"> -->
+
   <link rel="stylesheet" type="text/css" href="<?= media(); ?>/css/mystyle.css">
   <!-- Bootstrap -->
   <link href="<?= media() ?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -34,9 +36,8 @@
   <!-- Custom Theme Style -->
   <link href="<?= media() ?>/build/css/custom.min.css" rel="stylesheet">
   <!-- Custom CSS -->
-  <link href="<?= media() ?>/template/dist/css/style.css" rel="stylesheet">
   <style>
-    .top_nav{  display: flex; position: fixed; top: 0; left: 0; right: 0; z-index:2; } .navbar{ position:fixed; z-index:2;}
+    .top_nav{  display: flex; position: fixed; top: 0; left: 0; right: 0; z-index:3; } .navbar{ position:fixed; z-index:2;}
   </style>
 </head>
 

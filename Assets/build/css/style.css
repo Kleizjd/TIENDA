@@ -1,4 +1,4 @@
-.app-sidebar__user-avatar {
+/* .app-sidebar__user-avatar {
     width: 48px;
     background: gray;
     padding: 6px;
@@ -36,8 +36,9 @@
 .bootstrap-select > .dropdown-toggle{
 	border: 1px solid #CCC;
 }
+
 /*Estilos login*/
-#divLoading{
+/* #divLoading{
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -57,9 +58,9 @@
 	color: red;
 	font-size: 13pt;
 	font-weight: bold;
-}
+} */
 /* style portada categoría */
-.prevPhoto {
+/* .prevPhoto {
     display: flex;
     justify-content: space-between;
     width: 300px;
@@ -133,10 +134,10 @@
 #imgCategoria img{
 	width: 200px;
 	margin: auto;
-}
+}  */
 
 /* Upload fotos*/
-#containerImages{
+/* #containerImages{
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -180,10 +181,10 @@
 #celFotos img{
 	width: 150px;
 	margin: 10px;
-}
+}  */
 
 /* TIENDA VIRTUAL */
-.divmetodpago label, #divCondiciones{
+/* .divmetodpago label, #divCondiciones{
 	width: 100%;
 	display: flex;
 }
@@ -263,4 +264,4 @@
     margin: 10px;
     color: #dc3545;
     font-size: 42px;
-}
+} */
