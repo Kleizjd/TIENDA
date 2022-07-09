@@ -1,5 +1,6 @@
 <?php 
 	const BASE_URL = "http://localhost/www/TIENDA";
+	const MEDIA = "/Assets";
 	//const BASE_URL = "https://abelosh.com/tiendavirtual";
 
 	//Zona horaria

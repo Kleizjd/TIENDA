@@ -20,7 +20,6 @@
 				header("Location:".base_url().'/dashboard');
 			}
 			$data['page_tag'] = "Usuarios";
-			// $data['page_title'] = "USUARIOS";
 			$data['page_title'] = "USUARIOS <small>Tienda Virtual</small>";
 
 			$data['page_name'] = "usuarios";
@@ -182,6 +181,11 @@
 		}
 
 		public function putPerfil(){
+			// dep($_POST);
+			// $imgPortada = 'img_'.md5(date('d-m-Y H:i:s')).'.jpg';
+
+			// echo $imgPortada;
+			// exit();
 			if($_POST){
 				if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido']) || empty($_POST['txtTelefono']) )
 				{
@@ -193,13 +197,32 @@
 					$strApellido = strClean($_POST['txtApellido']);
 					$intTelefono = intval(strClean($_POST['txtTelefono']));
 					$strPassword = "";
+
+					$ruta = strtolower(clear_cadena($strNombre));
+					$ruta = str_replace(" ","-",$ruta);
+
+					$foto   	 	= $_FILES['foto'];
+					$nombre_foto 	= $foto['name'];
+					$type 		 	= $foto['type'];
+					$url_temp    	= $foto['tmp_name'];
+					$imgPortada 	= 'upload-user.svg';
+					$request_categoria = "";
+
+					if($nombre_foto != ''){
+						$imgPortada = 'img_'.md5(date('d-m-Y H:i:s')).'.jpg';
+					}
 					if(!empty($_POST['txtPassword'])){
 						$strPassword = hash("SHA256",$_POST['txtPassword']);
 					}
+					if($nombre_foto == ''){
+						if($_POST['foto_actual'] != 'upload-user.svg' && $_POST['foto_remove'] == 0 ){
+							$imgPortada = $_POST['foto_actual'];
+						}
 					$request_user = $this->model->updatePerfil($idUsuario,
 																$strIdentificacion, 
 																$strNombre,
 																$strApellido, 
+																$imgPortada, 
 																$intTelefono, 
 																$strPassword);
 					if($request_user)
@@ -215,41 +238,41 @@
 			die();
 		}
 
-		public function putDFical(){
-			if($_POST){
-				if(empty($_POST['txtNit']) || empty($_POST['txtNombreFiscal']) || empty($_POST['txtDirFiscal']) )
-				{
-					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-				}else{
-					$idUsuario = $_SESSION['idUser'];
-					$strNit = strClean($_POST['txtNit']);
-					$strNomFiscal = strClean($_POST['txtNombreFiscal']);
-					$strDirFiscal = strClean($_POST['txtDirFiscal']);
-					$request_datafiscal = $this->model->updateDataFiscal($idUsuario,
-																		$strNit,
-																		$strNomFiscal, 
-																		$strDirFiscal);
-					if($request_datafiscal)
-					{
-						sessionUser($_SESSION['idUser']);
-						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-					}else{
-						$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
-					}
-				}
-				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
-			}
-			die();
-		}
-	public function setFotoPerfil(){
-		if($_POST){
-			if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido'])){
-				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-			}else{
+		// public function putDFical(){
+		// 	if($_POST){
+		// 		if(empty($_POST['txtNit']) || empty($_POST['txtNombreFiscal']) || empty($_POST['txtDirFiscal']) )
+		// 		{
+		// 			$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
+		// 		}else{
+		// 			$idUsuario = $_SESSION['idUser'];
+		// 			$strNit = strClean($_POST['txtNit']);
+		// 			$strNomFiscal = strClean($_POST['txtNombreFiscal']);
+		// 			$strDirFiscal = strClean($_POST['txtDirFiscal']);
+		// 			$request_datafiscal = $this->model->updateDataFiscal($idUsuario,
+		// 																$strNit,
+		// 																$strNomFiscal, 
+		// 																$strDirFiscal);
+		// 			if($request_datafiscal)
+		// 			{
+		// 				sessionUser($_SESSION['idUser']);
+		// 				$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+		// 			}else{
+		// 				$arrResponse = array("status" => false, "msg" => 'No es posible actualizar los datos.');
+		// 			}
+		// 		}
+		// 		echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+		// 	}
+		// 	die();
+		// }
+	// public function setFotoPerfil(){
+	// 	if($_POST){
+	// 		if(empty($_POST['txtIdentificacion']) || empty($_POST['txtNombre']) || empty($_POST['txtApellido'])){
+	// 			$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
+	// 		}else{
 
-				$intIdFotoPerfil = intval($_POST['idFotoPerfil']);
-				$strFotoPerfil =  strClean($_POST['txtNombre']);
-				$strDescipcion = strClean($_POST['txtApellido']);
+	// 			$intIdFotoPerfil = intval($_POST['idFotoPerfil']);
+	// 			$strFotoPerfil =  strClean($_POST['txtNombre']);
+	// 			$strDescipcion = strClean($_POST['txtApellido']);
 
 	// 			$ruta = strtolower(clear_cadena($strFotoPerfil));
 	// 			$ruta = str_replace(" ","-",$ruta);
@@ -303,17 +326,17 @@
 	// 			}else{
 	// 				$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
 	// 			}
-			}
-			echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
-		}
-		die();
-	}
-	function uploadImagePerfil(array $data, string $name)
-	{
-		$url_temp = $data['tmp_name'];
-		$destino    = 'Views/Usuarios/UploadsProfile/' . $name;
-		$move = move_uploaded_file($url_temp, $destino);
-		return $move;
+	// 		}
+	// 		echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+	// 	}
+	// 	die();
+	// }
+	// function uploadImagePerfil(array $data, string $name)
+	// {
+	// 	$url_temp = $data['tmp_name'];
+	// 	$destino    = 'Views/Usuarios/UploadsProfile/' . $name;
+	// 	$move = move_uploaded_file($url_temp, $destino);
+	// 	return $move;
 	}
 
 	}

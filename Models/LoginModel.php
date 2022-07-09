@@ -31,6 +31,7 @@
 							p.identificacion,
 							p.nombres,
 							p.apellidos,
+							p.foto,
 							p.telefono,
 							p.email_user,
 							p.nit,
@@ -44,6 +45,7 @@
 					WHERE p.idpersona = $this->intIdUsuario";
 			$request = $this->select($sql);
 			$_SESSION['userData'] = $request;
+			// dep($_SESSION);
 			return $request;
 		}
 

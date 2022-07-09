@@ -38,6 +38,7 @@ height: 100%;
 .profilePicture {
     display: flex;
     justify-content: space-between;
+
     border: 1px solid #CCC;
     position: relative;
     cursor: pointer;
@@ -75,7 +76,7 @@ height: 100%;
 	font-weight: bold; 
 	margin-top: 10px;
 }
-.delPhoto{
+.delPhoto{/*signo borrar foto*/
 	color: #FFF;
 	display: -webkit-flex;
 	display: -moz-flex;

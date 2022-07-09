@@ -187,7 +187,6 @@ function fntEditInfo(element,idcategoria){
             let objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#idCategoria").value = objData.data.idcategoria;
                 document.querySelector("#txtNombre").value = objData.data.nombre;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
                 document.querySelector('#foto_actual').value = objData.data.portada;
@@ -198,7 +197,7 @@ function fntEditInfo(element,idcategoria){
                 }else{
                     document.querySelector("#listStatus").value = 2;
                 }
-                $('#listStatus').selectpicker('render');
+                // $('#listStatus').selectpicker('render');
 
                 if(document.querySelector('#img')){
                     document.querySelector('#img').src = objData.data.url_portada;

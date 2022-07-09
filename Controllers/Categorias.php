@@ -24,11 +24,13 @@
 			$data['page_functions_js'] = "functions_categorias.js";
 			$this->views->getView($this,"categorias",$data);
 		}
-		// dep($_POST);
-			// dep($_FILES);
-			// exit();
+
 		public function setCategoria(){
-	
+	    //  dep($_POST);
+		//  $imgPortada = 'img_'.md5(date('d-m-Y H:i:s')).'.jpg';
+
+		// 			echo $imgPortada;
+			// exit();
 			if($_POST){
 				if(empty($_POST['txtNombre']) || empty($_POST['txtDescripcion']) || empty($_POST['listStatus']) )
 				{
@@ -44,6 +46,7 @@
 					$ruta = str_replace(" ","-",$ruta);
 
 					$foto   	 	= $_FILES['foto'];
+					// echo("Foto "+$foto);
 					$nombre_foto 	= $foto['name'];
 					$type 		 	= $foto['type'];
 					$url_temp    	= $foto['tmp_name'];
